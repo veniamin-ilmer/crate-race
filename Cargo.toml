@@ -1,0 +1,20 @@
+[package]
+name = "compare-speed"
+version = "0.1.0"
+authors = ["Veniamin Ilmer"]
+edition = "2018"
+
+[dependencies]
+bencher = "*"
+regex = "*"
+
+json = "*"
+serde_json = "*"
+json5 = "*"
+
+json_in_type = "*"
+
+[[bench]]
+name = "deserialize_json"
+path = "benches/deserialize_json/bench.rs"
+harness = false
