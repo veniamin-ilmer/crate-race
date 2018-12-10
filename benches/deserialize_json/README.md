@@ -1,5 +1,5 @@
-| | json | json5 | serde_json |
+| | json | serde_json | json5 |
 | --- | --- | --- | --- |
-| **baseline** | 1 | 2 | 3 |
-| **serial** | 1 | 2 | 3 |
-| **nested** | 1 | 2 | 2 |
+| **baseline** | 187 | 289 | 2324 |
+| **serial** | 7447 | 22576 | 145437 |
+| **nested** | 12201 | 26318 | 153104 |
