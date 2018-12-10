@@ -9,6 +9,10 @@ Crate race feeds the same kind of inputs into crate functions, and benchmarks th
 
 [Check out a list of functions here](benches).
 
+Each benchmark comes with the actual code used to run each of the functions.
+
+You can look through the code to judge which crate to use.
+
 ## Benchmarking Machine Specs
 
 * Operating System: Windows 7 Professional (Support for multiple operating systems planned for the future.)
@@ -25,12 +29,30 @@ Every day Crate Race checks for new version of Rust or Crates.
 
 If an update is detected, Crate Race will rerun the benchmarks test and update github.
 
-## Contributing
-Crate Race will only benchmark crates that share functionality with other crates.
+## Limitations
+### Only Shared functions
+Crate Race will not benchmark every single crate's unique functions.
 
-It will only test functions shared between the crates.
+It will only benchmark functions that match other relatively popular crates' functions.
 
 If a crate has an extra function that other crates do not have, Crate Race will not benchmark it.
+
+### Correctness checking
+Although Crate Race checks that the function returned a correct value expected for that function, it will not test the functions' edge cases being handled correctly.
+
+We are benchmarking, not QAing.
+
+### Subjective Comparison
+Some crates may be more easy to use than others, or have some other additional functionality that other crates don't have.
+
+Crate Race will not be rating these factors. It will only be benchmarking the functions.
+
+However the code used to benchmark the function will always be provided, so you can look at the code and judge for yourself how hard or easy it will be to use.
+
+### Contributing
+Crate Race will only benchmark crates that share functionality with other crates.
+
+It will only test functionality that is shared between the crates.
 
 If you have such shared crate functions, please feel free to add in a Pull Request with the extra crate.
 
