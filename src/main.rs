@@ -1,8 +1,9 @@
 
 fn main() {
+  run_bench("json_parse");
+}
   
-  let func_benched = "json_parse";
-  
+fn run_bench(func_benced: &str) {
   use std::process::Command;
   let output = Command::new("cargo")
       .arg("bench")
