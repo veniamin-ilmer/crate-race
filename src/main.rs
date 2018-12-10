@@ -61,48 +61,58 @@ fn main() {
   }
   funcs_vec.sort_by_key(|k| k.1);
 
-  use std::fs::OpenOptions;
-  use std::io::prelude::*;
-  use std::io::BufWriter;
-
-  let mut file = OpenOptions::new()
-      .write(true)
-      .append(false)
-      .open("D:\\Programming\\compare-speed\\benches\\deserialize_json\\README.md")
-      .expect("Unable to write file");
-
-  let mut stream = BufWriter::new(file);
+  let mut write_data = String::new();
 
   //Header
-  stream.write(b"| |");
+  write_data += "| |";
   for (crat, _) in &crats_vec {
-    stream.write(b" ");
-    stream.write(crat.as_bytes());
-    stream.write(b" |");
+    write_data += &format!(" {} |", crat);
   }
-  stream.write(b"\n");
+  write_data += "\n";
 
   //Header divider
-  stream.write(b"| --- |");
+  write_data += "| --- |";
   for _ in &crats {
-    stream.write(b" --- |");
+    write_data += " --- |";
   }
-  stream.write(b"\n");
+  write_data += "\n";
   
   //Data
   for (func, _) in &funcs_vec {
-    stream.write(b"| **");
-    stream.write(func.as_bytes());
-    stream.write(b"** |");
+    write_data += &format!("| **{}** |", func);
     for (crat, _) in &crats_vec {
       if let Some(val) = map.get(&(crat, func)) {
-        stream.write(b" ");
-        stream.write(val.to_string().as_bytes());
-        stream.write(b" |");
+        write_data += &format!(" {} |", (*val as f32 / 1_000.0).to_string());
       } else {
-        stream.write(b" - |");
+        write_data += " - |";
       }
     }
-    stream.write(b"\n");
+    write_data += "\n";
   }
+  
+  write_data += "\nSpeed units are in microseconds per iteration\n\nCompiled on:\n\n";
+  
+  let output = Command::new("cargo")
+    .arg("version")
+    .output()
+    .expect("Failed to run cargo")
+    .stdout;
+  let output = String::from_utf8(output).unwrap();
+  write_data += &output;
+  
+  write_data += "\nCrate versions tested:\n\n";
+  
+  for (crat, _) in &crats_vec {
+    let output = Command::new("cargo")
+      .arg("search")
+      .arg(crat)
+      .output()
+      .expect("Failed to run cargo")
+      .stdout;
+    let output = String::from_utf8(output).unwrap();
+    write_data += &format!("    {}\n", output.lines().next().unwrap());
+  }
+  
+  use std::fs;
+  fs::write("D:\\Programming\\compare-speed\\benches\\deserialize_json\\README.md", write_data).expect("Unable to write file");
 }
