@@ -1,9 +1,30 @@
-
+  /*Build a csv in this format:
+    crate, version, func_benched1, func_benched2, func_benched3, ...
+    
+    Every day Crate Race will loop through each crate and version,
+    and run `cargo search` on that crate to check if the version is the same.
+    
+    If it is not the same, run run_bench() on each func_benched listed.
+    
+    Afterwards, update the CSV to include the newest version of that crate.
+    
+    Phase 2 optimization:
+    Keep track of the func_benched that were tested.
+    If we run into another crate with a matching func_benched, don't run run_bench() on it.
+    Continue with all other func_benched that were not already run.
+    Continue to update the crate version in the CSV.
+  */
 fn main() {
   run_bench("json_parse");
 }
-  
-fn run_bench(func_benced: &str) {
+
+/*Run benchmarks for func_benched.
+  The path and everything for func_benched is configured in cargo.toml.
+  Parse and sort the results, write them to README.md in the func_benched folder.
+  For all crates used, run `cargo search [crate]` to get the latest crate version, and save that to the readme.
+  Save the cargo/rust version into the readme too.
+*/
+fn run_bench(func_benched: &str) {
   use std::process::Command;
   let output = Command::new("cargo")
       .arg("bench")
@@ -65,26 +86,26 @@ fn run_bench(func_benced: &str) {
   }
   funcs_vec.sort_by_key(|k| k.1);
 
-  let mut write_data = String::from("# );
+  let mut write_data = format!("# {}\n", func_benched);
 
   //Header
   write_data += "| |";
-  for (crat, _) in &crats_vec {
-    write_data += &format!(" {} |", crat);
+  for (func, _) in &funcs_vec {
+    write_data += &format!(" {} |", func);
   }
   write_data += "\n";
 
   //Header divider
   write_data += "| --- |";
-  for _ in &crats {
+  for _ in &func {
     write_data += " --- |";
   }
   write_data += "\n";
   
   //Data
-  for (func, _) in &funcs_vec {
-    write_data += &format!("| **{}** |", func);
-    for (crat, _) in &crats_vec {
+  for (crat, _) in &crats_vec {
+    write_data += &format!("| **{}** |", crat);
+    for (func, _) in &func_vec {
       if let Some(val) = map.get(&(crat, func)) {
         write_data += &format!(" {} |", (*val as f32 / 1_000.0).to_string());
       } else {
@@ -94,17 +115,7 @@ fn run_bench(func_benced: &str) {
     write_data += "\n";
   }
   
-  write_data += "\nSpeed units are in microseconds per iteration\n\nCompiled on:\n\n";
-  
-  let output = Command::new("cargo")
-    .arg("version")
-    .output()
-    .expect("Failed to run cargo")
-    .stdout;
-  let output = String::from_utf8(output).unwrap();
-  write_data += &output;
-  
-  write_data += "\nCrate versions tested:\n\n";
+  write_data += "\nSpeed units are in microseconds per iteration\n\nCrate versions tested:\n\n";
   
   for (crat, _) in &crats_vec {
     let output = Command::new("cargo")
@@ -116,6 +127,18 @@ fn run_bench(func_benced: &str) {
     let output = String::from_utf8(output).unwrap();
     write_data += &format!("    {}\n", output.lines().next().unwrap());
   }
+  
+  write_data += "\nCompiled on: `";
+  
+  let output = Command::new("cargo")
+    .arg("version")
+    .output()
+    .expect("Failed to run cargo")
+    .stdout;
+  let output = String::from_utf8(output).unwrap().trim();
+  write_data += &output;
+  
+  write_data += "`";
   
   use std::fs;
   fs::write(format!("D:\\Programming\\compare-speed\\benches\\{}\\README.md", func_benched), write_data).expect("Unable to write file");
