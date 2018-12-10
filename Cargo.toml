@@ -1,5 +1,5 @@
 [package]
-name = "gate-race"
+name = "crate-race"
 version = "0.2.0"
 authors = ["Veniamin Ilmer"]
 edition = "2018"
