@@ -1,6 +1,6 @@
 [package]
-name = "compare-speed"
-version = "0.1.0"
+name = "gate-race"
+version = "0.2.0"
 authors = ["Veniamin Ilmer"]
 edition = "2018"
 
