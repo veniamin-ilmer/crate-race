@@ -52,8 +52,6 @@ However the code used to benchmark the function will always be provided, so you 
 ## Contributing
 Crate Race will only benchmark crates that share functionality with other crates.
 
-It will only test functionality that is shared between the crates.
-
 If you have such shared crate functions, please feel free to add in a Pull Request with the extra crate.
 
 Please adhere to the standard visible with all other benchmarks in this project:
@@ -73,4 +71,4 @@ Include this template code in there:
       });
     }
 
-If there are multiple tests for the function, feel free to add in these tests into this folder.
+If there are multiple tests for the function, feel free to add in these tests into this file.
