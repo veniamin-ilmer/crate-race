@@ -49,7 +49,7 @@ Crate Race will not be rating these factors. It will only be benchmarking the fu
 
 However the code used to benchmark the function will always be provided, so you can look at the code and judge for yourself how hard or easy it will be to use.
 
-### Contributing
+## Contributing
 Crate Race will only benchmark crates that share functionality with other crates.
 
 It will only test functionality that is shared between the crates.
