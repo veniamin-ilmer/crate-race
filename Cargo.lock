@@ -31,21 +31,34 @@ version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
+name = "byteorder"
+version = "1.2.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
 name = "cfg-if"
 version = "0.1.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
-name = "compare-speed"
-version = "0.1.0"
+name = "crate-race"
+version = "0.2.0"
 dependencies = [
  "bencher 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",
  "json 0.11.13 (registry+https://github.com/rust-lang/crates.io-index)",
  "json5 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "json_in_type 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-bigint 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-traits 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "regex 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_json 1.0.33 (registry+https://github.com/rust-lang/crates.io-index)",
+ "uint 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
+
+[[package]]
+name = "crunchy"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "digest"
@@ -124,6 +137,28 @@ dependencies = [
 ]
 
 [[package]]
+name = "num-bigint"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "num-integer 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-traits 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "num-integer"
+version = "0.1.39"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "num-traits 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "num-traits"
+version = "0.2.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
 name = "pest"
 version = "2.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -197,6 +232,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "ucd-util 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
+
+[[package]]
+name = "rustc-hex"
+version = "2.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "ryu"
@@ -273,6 +313,16 @@ version = "0.1.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
+name = "uint"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "byteorder 1.2.7 (registry+https://github.com/rust-lang/crates.io-index)",
+ "crunchy 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rustc-hex 2.0.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "unicode-xid"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -293,7 +343,9 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum bencher 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "7dfdb4953a096c551ce9ace855a604d702e6e62d77fac690575ae347571717f5"
 "checksum block-buffer 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)" = "a076c298b9ecdb530ed9d967e74a6027d6a7478924520acddcddc24c1c8ab3ab"
 "checksum byte-tools 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "560c32574a12a89ecd91f5e742165893f86e3ab98d21f8ea548658eb9eef5f40"
+"checksum byteorder 1.2.7 (registry+https://github.com/rust-lang/crates.io-index)" = "94f88df23a25417badc922ab0f5716cc1330e87f71ddd9203b3a3ccd9cedf75d"
 "checksum cfg-if 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)" = "082bb9b28e00d3c9d39cc03e64ce4cea0f1bb9b3fde493f0cbc008472d22bdf4"
+"checksum crunchy 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "c240f247c278fa08a6d4820a6a222bfc6e0d999e51ba67be94f44c905b2161f2"
 "checksum digest 0.7.6 (registry+https://github.com/rust-lang/crates.io-index)" = "03b072242a8cbaf9c145665af9d250c59af3b958f83ed6824e13533cf76d5b90"
 "checksum fake-simd 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "e88a8acf291dafb59c2d96e8f59828f3838bb1a70398823ade51a84de6a6deed"
 "checksum generic-array 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ef25c5683767570c2bbd7deba372926a55eaae9982d7726ee2a1050239d45b9d"
@@ -305,6 +357,9 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum libc 0.2.44 (registry+https://github.com/rust-lang/crates.io-index)" = "10923947f84a519a45c8fefb7dd1b3e8c08747993381adee176d7a82b4195311"
 "checksum maplit 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "08cbb6b4fef96b6d77bfc40ec491b1690c779e77b05cd9f07f787ed376fd4c43"
 "checksum memchr 2.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "0a3eb002f0535929f1199681417029ebea04aadc0c7a4224b46be99c7f5d6a16"
+"checksum num-bigint 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "10b8423ea72ec64751198856a853e07b37087cfc9b53a87ecb19bff67b6d1320"
+"checksum num-integer 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)" = "e83d528d2677f0518c570baf2b7abdcf0cd2d248860b68507bdcb3e91d4c0cea"
+"checksum num-traits 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)" = "0b3a5d7cc97d6d30d8b9bc8fa19bf45349ffe46241e8816f50f62f6d6aaabee1"
 "checksum pest 2.0.2 (registry+https://github.com/rust-lang/crates.io-index)" = "a677051ad923732bb5c70f2d45f8985a96e3eee2e2bff86697e3b11b0c3fcfde"
 "checksum pest_derive 2.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "b76f477146419bc539a63f4ef40e902166cb43b3e51cecc71d9136fd12c567e7"
 "checksum pest_generator 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "3ebee4e9680be4fd162e6f3394ae4192a6b60b1e4d17d845e631f0c68d1a3386"
@@ -313,6 +368,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum quote 0.6.10 (registry+https://github.com/rust-lang/crates.io-index)" = "53fa22a1994bd0f9372d7a816207d8a2677ad0325b073f5c5332760f0fb62b5c"
 "checksum regex 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "37e7cbbd370869ce2e8dff25c7018702d10b21a20ef7135316f8daecd6c25b7f"
 "checksum regex-syntax 0.6.4 (registry+https://github.com/rust-lang/crates.io-index)" = "4e47a2ed29da7a9e1960e1639e7a982e6edc6d49be308a3b02daf511504a16d1"
+"checksum rustc-hex 2.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "403bb3a286107a04825a5f82e1270acc1e14028d3d554d7a1e08914549575ab8"
 "checksum ryu 0.2.7 (registry+https://github.com/rust-lang/crates.io-index)" = "eb9e9b8cde282a9fe6a42dd4681319bfb63f121b8a8ee9439c6f4107e58a46f7"
 "checksum ryu-ecmascript 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "79f19ef8ea9a62575f9422da5ca81b1529ccf9be3e2150bf175f36612af0575c"
 "checksum serde 1.0.81 (registry+https://github.com/rust-lang/crates.io-index)" = "c91eb5b0190ae87b4e2e39cbba6e3bed3ac6186935fe265f0426156c4c49961b"
@@ -324,6 +380,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum typenum 1.10.0 (registry+https://github.com/rust-lang/crates.io-index)" = "612d636f949607bdf9b123b4a6f6d966dedf3ff669f7f045890d3a4a73948169"
 "checksum ucd-trie 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "71a9c5b1fe77426cf144cc30e49e955270f5086e31a6441dfa8b32efc09b9d77"
 "checksum ucd-util 0.1.3 (registry+https://github.com/rust-lang/crates.io-index)" = "535c204ee4d8434478593480b8f86ab45ec9aae0e83c568ca81abf0fd0e88f86"
+"checksum uint 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)" = "082df6964410f6aa929a61ddfafc997e4f32c62c22490e439ac351cec827f436"
 "checksum unicode-xid 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "fc72304796d0818e357ead4e000d19c9c174ab23dc11093ac919054d20a6a7fc"
 "checksum utf8-ranges 1.0.2 (registry+https://github.com/rust-lang/crates.io-index)" = "796f7e48bef87609f7ade7e06495a87d5cd06c7866e6a5cbfceffc558a243737"
 "checksum version_check 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "914b1a6776c4c929a602fafd8bc742e06365d4bcbe48c30f9cca5824f70dc9dd"

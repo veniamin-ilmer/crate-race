@@ -1,21 +1,21 @@
-  /*Build a csv in this format:
-    crate, version, func_benched1, func_benched2, func_benched3, ...
-    
-    Every day Crate Race will loop through each crate and version,
-    and run `cargo search` on that crate to check if the version is the same.
-    
-    If it is not the same, run run_bench() on each func_benched listed.
-    
-    Afterwards, update the CSV to include the newest version of that crate.
-    
-    Phase 2 optimization:
-    Keep track of the func_benched that were tested.
-    If we run into another crate with a matching func_benched, don't run run_bench() on it.
-    Continue with all other func_benched that were not already run.
-    Continue to update the crate version in the CSV.
-  */
+/*Build a csv in this format:
+  crate, version, func_benched1, func_benched2, func_benched3, ...
+  
+  Every day Crate Race will loop through each crate and version,
+  and run `cargo search` on that crate to check if the version is the same.
+  
+  If it is not the same, run run_bench() on each func_benched listed.
+  
+  Afterwards, update the CSV to include the newest version of that crate.
+  
+  Phase 2 optimization:
+  Keep track of the func_benched that were tested.
+  If we run into another crate with a matching func_benched, don't run run_bench() on it.
+  Continue with all other func_benched that were not already run.
+  Continue to update the crate version in the CSV.
+*/
 fn main() {
-  run_bench("json_parse");
+  run_bench("big_arithmetic");
 }
 
 /*Run benchmarks for func_benched.
@@ -97,7 +97,7 @@ fn run_bench(func_benched: &str) {
 
   //Header divider
   write_data += "| --- |";
-  for _ in &func {
+  for _ in &funcs_vec {
     write_data += " --- |";
   }
   write_data += "\n";
@@ -105,7 +105,7 @@ fn run_bench(func_benched: &str) {
   //Data
   for (crat, _) in &crats_vec {
     write_data += &format!("| **{}** |", crat);
-    for (func, _) in &func_vec {
+    for (func, _) in &funcs_vec {
       if let Some(val) = map.get(&(crat, func)) {
         write_data += &format!(" {} |", (*val as f32 / 1_000.0).to_string());
       } else {
@@ -135,11 +135,11 @@ fn run_bench(func_benched: &str) {
     .output()
     .expect("Failed to run cargo")
     .stdout;
-  let output = String::from_utf8(output).unwrap().trim();
+  let output = String::from_utf8(output).unwrap();
   write_data += &output;
   
   write_data += "`";
   
   use std::fs;
-  fs::write(format!("D:\\Programming\\compare-speed\\benches\\{}\\README.md", func_benched), write_data).expect("Unable to write file");
+  fs::write(format!("D:\\Programming\\crate-race\\benches\\{}\\README.md", func_benched), write_data).expect("Unable to write file");
 }

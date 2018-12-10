@@ -8,13 +8,24 @@ edition = "2018"
 bencher = "*"
 regex = "*"
 
+#json_parse
 json = "*"
 serde_json = "*"
 json5 = "*"
 
 json_in_type = "*"
 
+#big_arithmetic
+num-bigint = "*"
+num-traits = "*"  #Used by bigint code
+uint = "*"
+
 [[bench]]
-name = "deserialize_json"
-path = "benches/deserialize_json/bench.rs"
+name = "json_parse"
+path = "benches/json_parse/bench.rs"
+harness = false
+
+[[bench]]
+name = "big_arithmetic"
+path = "benches/big_arithmetic/bench.rs"
 harness = false
