@@ -1,10 +1,13 @@
 
 fn main() {
+  
+  let func_benched = "json_parse"
+  
   use std::process::Command;
   let output = Command::new("cargo")
       .arg("bench")
       .arg("--bench")
-      .arg("deserialize_json")
+      .arg(func_benched)
       .output()
       .expect("Failed to run cargo")
       .stdout;
@@ -61,7 +64,7 @@ fn main() {
   }
   funcs_vec.sort_by_key(|k| k.1);
 
-  let mut write_data = String::new();
+  let mut write_data = String::from("# );
 
   //Header
   write_data += "| |";
@@ -114,5 +117,5 @@ fn main() {
   }
   
   use std::fs;
-  fs::write("D:\\Programming\\compare-speed\\benches\\deserialize_json\\README.md", write_data).expect("Unable to write file");
+  fs::write(format!("D:\\Programming\\compare-speed\\benches\\{}\\README.md", func_benched), write_data).expect("Unable to write file");
 }
