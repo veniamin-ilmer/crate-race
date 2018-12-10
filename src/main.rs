@@ -1,7 +1,7 @@
 
 fn main() {
   
-  let func_benched = "json_parse"
+  let func_benched = "json_parse";
   
   use std::process::Command;
   let output = Command::new("cargo")
