@@ -117,6 +117,7 @@ fn run_bench(func_benched: &str) {
   
   write_data += "\nSpeed units are in microseconds per iteration.\n\n";
 
+  //Copy a description of each func from bench.rs comments
   use std::fs::File;
   use std::io::{BufRead, BufReader};
 
@@ -127,6 +128,7 @@ fn run_bench(func_benched: &str) {
   for line in f.lines() {
     let line = line.expect("Unable to read line from bench.rs to read comments");
     if line[0..3] == "///" {
+      write_data += "* ";
       write_data += line[3..];
       write_data += "\n";
     }
