@@ -29,27 +29,36 @@ fn main() {
 
   let mut benched_history = std::collections::HashSet::new();
   
+  let mut write_data = String::new();
+  
   let mut first = true;
   for line in f.lines() {
+    let line = line.expect("Unable to read line from crate_list.csv");
     if first { //Cargo version
       first = false;
+      write_data += line;
+      write_data += "\n";
       continue; //Skip cargo version
     }
-    let line = line.expect("Unable to read line from crate_list.csv");
     let mut line_vals = line.split(",");
     if let Some(crat) = line_vals.next() && Some(old_version) = line_vals.next() {
-      if
       let crate_version_str = get_crate_version_str(crat);
       //Extract the version
       let mut crate_version_split = crate_version_str.split("\"");
       crate_version_split.next(); //Skip crate
-      let version = crate_version_split.next(); //Get version
-      if version != old_version { //New version available! Rerun benchmarks for all benches for this crate!
+      let new_version = crate_version_split.next(); //Get version
+      if new_version != old_version { //New version available! Rerun benchmarks for all benches for this crate!
+        write_data += &format!("{},{}", crat, new_version); //Update csv to new version
         while let Some(bench) = line_vals.next() {
           run_bench(bench);
           benched_history.insert(bench);
+          write_data += &format!(",{}", bench); //Rerecord all benches into csv
         }
+      } else {  //Old version == new version
+        write_data += line;
       }
+    } else {  //crate + version not there.
+      write_data += line;
     }
   }
   
