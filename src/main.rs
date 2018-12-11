@@ -1,34 +1,66 @@
-/*Build a csv in this format:
-  crate, version, bench1, bench2, bench3, ...
-  
-  Every day Crate Race will loop through each crate and version,
-  and run `cargo search` on that crate to check if the version is the same.
-  
-  If it is not the same, run run_bench() on each bench listed.
-  
-  Afterwards, update the CSV to include the newest version of that crate.
-  
-  Phase 2 optimization:
-  Keep track of the benches that were tested.
-  If we run into another crate with a matching bench, don't run run_bench() on it.
-  Continue with all other benches that were not already run.
-  Continue to update the crate version in the CSV.
-  
-  Phase 3:
-  The first line of the code will have the cargo version listed.
-  Compare this to the output of `cargo version`
-  If it is different, run through all benches listed, and rerun all of them.
-*/
+use std::fs;
+use std::io::{BufRead, BufReader};
+
+///Build a csv in this format:
+///crate, version, bench1, bench2, bench3, ...
+///
+///Every day Crate Race will loop through each crate and version,
+///and run `cargo search` on that crate to check if the version is the same.
+///
+///If it is not the same, run run_bench() on each bench listed.
+///
+///Afterwards, update the CSV to include the newest version of that crate.
+///
+///Optimization:
+///Keep track of the benches that were tested.
+///If we run into another crate with a matching bench, don't run run_bench() on it.
+///Continue with all other benches that were not already run.
+///Continue to update the crate version in the CSV.
+///
+///Phase 3:
+///The first line of the code will have the cargo version listed.
+///Compare this to the output of `cargo version`
+///If it is different, run through all benches listed, and rerun all of them.
+
 fn main() {
-  run_bench("big_arithmetic");
+  let f = fs:File::open(format!("D:\\Programming\\crate-race\\crate_list.csv", func_benched))
+                  .expect("Unable to open crate_list.csv");
+  let f = BufReader::new(f);
+
+  let mut benched_history = std::collections::HashSet::new();
+  
+  let mut first = true;
+  for line in f.lines() {
+    if first { //Cargo version
+      first = false;
+      continue; //Skip cargo version
+    }
+    let line = line.expect("Unable to read line from crate_list.csv");
+    let mut line_vals = line.split(",");
+    if let Some(crat) = line_vals.next() && Some(old_version) = line_vals.next() {
+      if
+      let crate_version_str = get_crate_version_str(crat);
+      //Extract the version
+      let mut crate_version_split = crate_version_str.split("\"");
+      crate_version_split.next(); //Skip crate
+      let version = crate_version_split.next(); //Get version
+      if version != old_version { //New version available! Rerun benchmarks for all benches for this crate!
+        while let Some(bench) = line_vals.next() {
+          run_bench(bench);
+          benched_history.insert(bench);
+        }
+      }
+    }
+  }
+  
 }
 
-/*Run benchmarks for func_benched.
-  The path and everything for func_benched is configured in cargo.toml.
-  Parse and sort the results, write them to README.md in the func_benched folder.
-  For all crates used, run `cargo search [crate]` to get the latest crate version, and save that to the readme.
-  Save the cargo/rust version into the readme too.
-*/
+///Run benchmarks for func_benched.
+///The path and everything for func_benched is configured in cargo.toml.
+///Parse and sort the results, write them to README.md in the func_benched folder.
+///For all crates used, run `cargo search [crate]` to get the latest crate version, and save that to the readme.
+///Save the cargo/rust version into the readme too.
+
 fn run_bench(func_benched: &str) {
   use std::process::Command;
   let output = Command::new("cargo")
@@ -123,10 +155,7 @@ fn run_bench(func_benched: &str) {
   write_data += "\nSpeed units are in microseconds per iteration.\n\n";
 
   //Copy a description of each func from bench.rs comments
-  use std::fs::File;
-  use std::io::{BufRead, BufReader};
-
-  let f = File::open(format!("D:\\Programming\\crate-race\\benches\\{}\\bench.rs", func_benched))
+  let f = fs:File::open(format!("D:\\Programming\\crate-race\\benches\\{}\\bench.rs", func_benched))
                .expect("Unable to open bench.rs to read comments");
   let f = BufReader::new(f);
 
@@ -142,28 +171,30 @@ fn run_bench(func_benched: &str) {
   write_data += "\nCrate versions tested:\n\n";
   
   for (crat, _) in &crats_vec {
-    let output = Command::new("cargo")
-      .arg("search")
-      .arg(crat)
-      .output()
-      .expect("Failed to run cargo")
-      .stdout;
-    let output = String::from_utf8(output).unwrap();
-    write_data += &format!("    {}\n", output.lines().next().unwrap());
+    write_data += &format!("    {}\n", get_crate_version_str(crat));
   }
   
   write_data += "\nCompiled on: `";
-  
   let output = Command::new("cargo")
     .arg("version")
     .output()
-    .expect("Failed to run cargo")
+    .expect("Failed to run cargo version")
     .stdout;
   let output = String::from_utf8(output).unwrap();
   write_data += &output;
-  
   write_data += "`";
   
-  use std::fs;
   fs::write(format!("D:\\Programming\\crate-race\\benches\\{}\\README.md", func_benched), write_data).expect("Unable to write file");
+}
+
+fn get_crate_version_str(String: crat) -> String: crate_version_str {
+  let output = Command::new("cargo")
+    .arg("search")
+    .arg(crat)
+    .output()
+    .expect("Failed to run cargo search")
+    .stdout;
+  String::from_utf8(output)
+          .expect("Failed to get output from cargo search")
+          .lines().next().expect("Failed to read the first line of cargo search")
 }
