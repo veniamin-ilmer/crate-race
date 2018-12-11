@@ -1,10 +1,13 @@
 # md5
 | | baseline | lorem |
 | --- | --- | --- |
-| **md_5** | 0.21 | 83.675 |
-| **md5** | 0.96 | 125.765 |
+| **md_5** | 0.213 | 85.237 |
+| **md5** | 0.94 | 123.929 |
 
-Speed units are in microseconds per iteration
+Speed units are in microseconds per iteration.
+
+* Baseline: Hash "Hello".
+* Lorem: Hash 60k of Lorem Ipsum.
 
 Crate versions tested:
 

@@ -15,7 +15,7 @@
   Continue to update the crate version in the CSV.
 */
 fn main() {
-  run_bench("md5");
+  run_bench("big_arithmetic");
 }
 
 /*Run benchmarks for func_benched.
@@ -127,14 +127,14 @@ fn run_bench(func_benched: &str) {
 
   for line in f.lines() {
     let line = line.expect("Unable to read line from bench.rs to read comments");
-    if line[0..3] == "///" {
+    if line.len() > 3 && &line[0..3] == "///" {
       write_data += "* ";
-      write_data += line[3..];
+      write_data += &line[3..];
       write_data += "\n";
     }
   }
 
-  write_data += "\n\nCrate versions tested:\n\n";
+  write_data += "\nCrate versions tested:\n\n";
   
   for (crat, _) in &crats_vec {
     let output = Command::new("cargo")

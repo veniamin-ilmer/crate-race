@@ -1,11 +1,15 @@
 # json_parse
 | | baseline | serial | nested |
 | --- | --- | --- | --- |
-| **json** | 0.187 | 7.496 | 11.968 |
-| **serde_json** | 0.292 | 23.159 | 26.346 |
-| **json5** | 2.287 | 143.534 | 171.783 |
+| **json** | 0.184 | 7.367 | 11.903 |
+| **serde_json** | 0.295 | 23.021 | 26.343 |
+| **json5** | 2.336 | 146.681 | 153.157 |
 
-Speed units are in microseconds per iteration
+Speed units are in microseconds per iteration.
+
+* Baseline: Simple json with just one entry.
+* Serial: Opposite of nested. 100 entries listed in a "flat" format, one by one, without any tree structure.
+* Nested: 100 nested entries, each inside of the other.
 
 Crate versions tested:
 
