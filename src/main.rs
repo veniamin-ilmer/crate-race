@@ -115,7 +115,24 @@ fn run_bench(func_benched: &str) {
     write_data += "\n";
   }
   
-  write_data += "\nSpeed units are in microseconds per iteration\n\nCrate versions tested:\n\n";
+  write_data += "\nSpeed units are in microseconds per iteration.\n\n";
+
+  use std::fs::File;
+  use std::io::{BufRead, BufReader};
+
+  let f = File::open(format!("D:\\Programming\\crate-race\\benches\\{}\\bench.rs", func_benched))
+               .expect("Unable to open bench.rs to read comments");
+  let f = BufReader::new(f);
+
+  for line in f.lines() {
+    let line = line.expect("Unable to read line from bench.rs to read comments");
+    if line[0..3] == "///" {
+      write_data += line[3..];
+      write_data += "\n";
+    }
+  }
+
+  write_data += "\n\nCrate versions tested:\n\n";
   
   for (crat, _) in &crats_vec {
     let output = Command::new("cargo")
