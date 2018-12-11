@@ -1,9 +1,9 @@
 # json_parse
 | | baseline | serial | nested |
 | --- | --- | --- | --- |
-| **json** | 0.184 | 7.367 | 11.903 |
-| **serde_json** | 0.295 | 23.021 | 26.343 |
-| **json5** | 2.336 | 146.681 | 153.157 |
+| **json** | 0.187 | 7.381 | 11.699 |
+| **serde_json** | 0.284 | 23.239 | 25.472 |
+| **json5** | 2.26 | 143.533 | 150.058 |
 
 Speed units are in microseconds per iteration.
 

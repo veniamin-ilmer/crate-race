@@ -1,5 +1,6 @@
 use std::fs;
 use std::io::{BufRead, BufReader};
+use std::process::Command;
 
 ///Build a csv in this format:
 ///crate, version, bench1, bench2, bench3, ...
@@ -23,44 +24,52 @@ use std::io::{BufRead, BufReader};
 ///If it is different, run through all benches listed, and rerun all of them.
 
 fn main() {
-  let f = fs:File::open(format!("D:\\Programming\\crate-race\\crate_list.csv", func_benched))
-                  .expect("Unable to open crate_list.csv");
+  let f = fs::File::open("D:\\Programming\\crate-race\\crate_list.csv")
+                   .expect("Unable to open crate_list.csv");
   let f = BufReader::new(f);
 
-  let mut benched_history = std::collections::HashSet::new();
+//  let mut benched_history = std::collections::HashSet::new();
   
   let mut write_data = String::new();
   
+  println!("Checking if any Crates changed..");
   let mut first = true;
   for line in f.lines() {
     let line = line.expect("Unable to read line from crate_list.csv");
     if first { //Cargo version
       first = false;
-      write_data += line;
-      write_data += "\n";
+      write_data += &format!("{}\n", line);
       continue; //Skip cargo version
     }
     let mut line_vals = line.split(",");
-    if let Some(crat) = line_vals.next() && Some(old_version) = line_vals.next() {
-      let crate_version_str = get_crate_version_str(crat);
-      //Extract the version
-      let mut crate_version_split = crate_version_str.split("\"");
-      crate_version_split.next(); //Skip crate
-      let new_version = crate_version_split.next(); //Get version
-      if new_version != old_version { //New version available! Rerun benchmarks for all benches for this crate!
-        write_data += &format!("{},{}", crat, new_version); //Update csv to new version
-        while let Some(bench) = line_vals.next() {
-          run_bench(bench);
-          benched_history.insert(bench);
-          write_data += &format!(",{}", bench); //Rerecord all benches into csv
+    if let Some(crat) = line_vals.next() {
+      if let Some(old_version) = line_vals.next() {
+        let crate_version_str = get_crate_version_str(crat);
+        //Extract the version
+        let mut crate_version_split = crate_version_str.split("\"");
+        crate_version_split.next(); //Skip crate
+        let new_version = crate_version_split.next().expect(&format!("Crate {} version unavailable!!", crat)); //Get version
+        if new_version != old_version { //New version available! Rerun benchmarks for all benches for this crate!
+          println!("{} crate updated from {} to {}", crat, old_version, new_version);
+          write_data += &format!("{},{}", crat, new_version); //Update csv to new version
+          while let Some(bench) = line_vals.next() {
+            run_bench(bench);
+            //benched_history.insert(bench);
+            write_data += &format!(",{}", bench); //Rerecord all benches into csv
+          }
+        } else {  //Old version == new version
+          write_data += &line;
         }
-      } else {  //Old version == new version
-        write_data += line;
+      } else {  //version not there
+        write_data += &line;
       }
-    } else {  //crate + version not there.
-      write_data += line;
+    } else {  //crate not there.
+      write_data += &line;
     }
+    write_data += "\n";
   }
+  fs::write("D:\\Programming\\crate-race\\crate_list.csv", write_data).expect("Unable to write file");
+  println!("Done");
   
 }
 
@@ -71,7 +80,6 @@ fn main() {
 ///Save the cargo/rust version into the readme too.
 
 fn run_bench(func_benched: &str) {
-  use std::process::Command;
   let output = Command::new("cargo")
       .arg("bench")
       .arg("--bench")
@@ -164,7 +172,7 @@ fn run_bench(func_benched: &str) {
   write_data += "\nSpeed units are in microseconds per iteration.\n\n";
 
   //Copy a description of each func from bench.rs comments
-  let f = fs:File::open(format!("D:\\Programming\\crate-race\\benches\\{}\\bench.rs", func_benched))
+  let f = fs::File::open(format!("D:\\Programming\\crate-race\\benches\\{}\\bench.rs", func_benched))
                .expect("Unable to open bench.rs to read comments");
   let f = BufReader::new(f);
 
@@ -196,7 +204,7 @@ fn run_bench(func_benched: &str) {
   fs::write(format!("D:\\Programming\\crate-race\\benches\\{}\\README.md", func_benched), write_data).expect("Unable to write file");
 }
 
-fn get_crate_version_str(String: crat) -> String: crate_version_str {
+fn get_crate_version_str(crat: &str) -> String {
   let output = Command::new("cargo")
     .arg("search")
     .arg(crat)
@@ -204,6 +212,7 @@ fn get_crate_version_str(String: crat) -> String: crate_version_str {
     .expect("Failed to run cargo search")
     .stdout;
   String::from_utf8(output)
-          .expect("Failed to get output from cargo search")
-          .lines().next().expect("Failed to read the first line of cargo search")
+         .expect("Failed to get output from cargo search")
+         .lines().next().expect("Failed to read the first line of cargo search")
+         .to_string()
 }
