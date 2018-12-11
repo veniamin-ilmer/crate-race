@@ -26,8 +26,32 @@ dependencies = [
 ]
 
 [[package]]
+name = "block-buffer"
+version = "0.7.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "block-padding 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "byte-tools 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "byteorder 1.2.7 (registry+https://github.com/rust-lang/crates.io-index)",
+ "generic-array 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "block-padding"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "byte-tools 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "byte-tools"
 version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "byte-tools"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -48,6 +72,8 @@ dependencies = [
  "json 0.11.13 (registry+https://github.com/rust-lang/crates.io-index)",
  "json5 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "json_in_type 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "md-5 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "md5 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "num-bigint 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "num-traits 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "regex 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -69,6 +95,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "digest"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "generic-array 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "fake-simd"
 version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -76,6 +110,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "generic-array"
 version = "0.9.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "typenum 1.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "generic-array"
+version = "0.12.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "typenum 1.10.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -127,6 +169,21 @@ version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
+name = "md-5"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "block-buffer 0.7.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "digest 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "opaque-debug 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "md5"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
 name = "memchr"
 version = "2.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -156,6 +213,11 @@ dependencies = [
 [[package]]
 name = "num-traits"
 version = "0.2.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "opaque-debug"
+version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -342,12 +404,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum arrayref 0.3.5 (registry+https://github.com/rust-lang/crates.io-index)" = "0d382e583f07208808f6b1249e60848879ba3543f57c32277bf52d69c2f0f0ee"
 "checksum bencher 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "7dfdb4953a096c551ce9ace855a604d702e6e62d77fac690575ae347571717f5"
 "checksum block-buffer 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)" = "a076c298b9ecdb530ed9d967e74a6027d6a7478924520acddcddc24c1c8ab3ab"
+"checksum block-buffer 0.7.1 (registry+https://github.com/rust-lang/crates.io-index)" = "47dc7795bae66723a5ee26b79eea4c398a5395dafbaaa81821730bd318ff718f"
+"checksum block-padding 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "4fc4358306e344bf9775d0197fd00d2603e5afb0771bb353538630f022068ea3"
 "checksum byte-tools 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "560c32574a12a89ecd91f5e742165893f86e3ab98d21f8ea548658eb9eef5f40"
+"checksum byte-tools 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "980479e6fde23246dfb54d47580d66b4e99202e7579c5eaa9fe10ecb5ebd2182"
 "checksum byteorder 1.2.7 (registry+https://github.com/rust-lang/crates.io-index)" = "94f88df23a25417badc922ab0f5716cc1330e87f71ddd9203b3a3ccd9cedf75d"
 "checksum cfg-if 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)" = "082bb9b28e00d3c9d39cc03e64ce4cea0f1bb9b3fde493f0cbc008472d22bdf4"
 "checksum crunchy 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "c240f247c278fa08a6d4820a6a222bfc6e0d999e51ba67be94f44c905b2161f2"
 "checksum digest 0.7.6 (registry+https://github.com/rust-lang/crates.io-index)" = "03b072242a8cbaf9c145665af9d250c59af3b958f83ed6824e13533cf76d5b90"
+"checksum digest 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)" = "05f47366984d3ad862010e22c7ce81a7dbcaebbdfb37241a620f8b6596ee135c"
 "checksum fake-simd 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = "e88a8acf291dafb59c2d96e8f59828f3838bb1a70398823ade51a84de6a6deed"
+"checksum generic-array 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)" = "3c0f28c2f5bfb5960175af447a2da7c18900693738343dc896ffbcabd9839592"
 "checksum generic-array 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ef25c5683767570c2bbd7deba372926a55eaae9982d7726ee2a1050239d45b9d"
 "checksum itoa 0.4.3 (registry+https://github.com/rust-lang/crates.io-index)" = "1306f3464951f30e30d12373d31c79fbd52d236e5e896fd92f96ec7babbbe60b"
 "checksum json 0.11.13 (registry+https://github.com/rust-lang/crates.io-index)" = "9ad0485404155f45cce53a40d4b2d6ac356418300daed05273d9e26f91c390be"
@@ -356,10 +423,13 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum lazy_static 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "a374c89b9db55895453a74c1e38861d9deec0b01b405a82516e9d5de4820dea1"
 "checksum libc 0.2.44 (registry+https://github.com/rust-lang/crates.io-index)" = "10923947f84a519a45c8fefb7dd1b3e8c08747993381adee176d7a82b4195311"
 "checksum maplit 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "08cbb6b4fef96b6d77bfc40ec491b1690c779e77b05cd9f07f787ed376fd4c43"
+"checksum md-5 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)" = "a18af3dcaf2b0219366cdb4e2af65a6101457b415c3d1a5c71dd9c2b7c77b9c8"
+"checksum md5 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)" = "2cfd7095f695c117f89db0a838710180bc22f1867e2454a5c810a538baee55f9"
 "checksum memchr 2.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "0a3eb002f0535929f1199681417029ebea04aadc0c7a4224b46be99c7f5d6a16"
 "checksum num-bigint 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "10b8423ea72ec64751198856a853e07b37087cfc9b53a87ecb19bff67b6d1320"
 "checksum num-integer 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)" = "e83d528d2677f0518c570baf2b7abdcf0cd2d248860b68507bdcb3e91d4c0cea"
 "checksum num-traits 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)" = "0b3a5d7cc97d6d30d8b9bc8fa19bf45349ffe46241e8816f50f62f6d6aaabee1"
+"checksum opaque-debug 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "51ecbcb821e1bd256d456fe858aaa7f380b63863eab2eb86eee1bd9f33dd6682"
 "checksum pest 2.0.2 (registry+https://github.com/rust-lang/crates.io-index)" = "a677051ad923732bb5c70f2d45f8985a96e3eee2e2bff86697e3b11b0c3fcfde"
 "checksum pest_derive 2.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "b76f477146419bc539a63f4ef40e902166cb43b3e51cecc71d9136fd12c567e7"
 "checksum pest_generator 2.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "3ebee4e9680be4fd162e6f3394ae4192a6b60b1e4d17d845e631f0c68d1a3386"

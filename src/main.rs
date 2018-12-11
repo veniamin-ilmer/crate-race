@@ -15,7 +15,7 @@
   Continue to update the crate version in the CSV.
 */
 fn main() {
-  run_bench("big_arithmetic");
+  run_bench("md5");
 }
 
 /*Run benchmarks for func_benched.

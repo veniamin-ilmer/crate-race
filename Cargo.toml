@@ -20,6 +20,10 @@ num-bigint = "*"
 num-traits = "*"  #Used by bigint code
 uint = "*"
 
+#md5
+md5 = "*"
+md_5 = { version = "*", package = "md-5" }
+
 [[bench]]
 name = "json_parse"
 path = "benches/json_parse/bench.rs"
@@ -28,4 +32,9 @@ harness = false
 [[bench]]
 name = "big_arithmetic"
 path = "benches/big_arithmetic/bench.rs"
+harness = false
+
+[[bench]]
+name = "md5"
+path = "benches/md5/bench.rs"
 harness = false
