@@ -1,18 +1,23 @@
 /*Build a csv in this format:
-  crate, version, func_benched1, func_benched2, func_benched3, ...
+  crate, version, bench1, bench2, bench3, ...
   
   Every day Crate Race will loop through each crate and version,
   and run `cargo search` on that crate to check if the version is the same.
   
-  If it is not the same, run run_bench() on each func_benched listed.
+  If it is not the same, run run_bench() on each bench listed.
   
   Afterwards, update the CSV to include the newest version of that crate.
   
   Phase 2 optimization:
-  Keep track of the func_benched that were tested.
-  If we run into another crate with a matching func_benched, don't run run_bench() on it.
-  Continue with all other func_benched that were not already run.
+  Keep track of the benches that were tested.
+  If we run into another crate with a matching bench, don't run run_bench() on it.
+  Continue with all other benches that were not already run.
   Continue to update the crate version in the CSV.
+  
+  Phase 3:
+  The first line of the code will have the cargo version listed.
+  Compare this to the output of `cargo version`
+  If it is different, run through all benches listed, and rerun all of them.
 */
 fn main() {
   run_bench("big_arithmetic");
