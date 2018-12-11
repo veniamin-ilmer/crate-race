@@ -1,3 +1,6 @@
+///Baseline: Hash "Hello".
+///Lorem: Hash 60k of Lorem Ipsum.
+
 #[macro_use]
 extern crate bencher;
 
