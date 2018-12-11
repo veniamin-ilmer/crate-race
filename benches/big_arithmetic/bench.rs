@@ -1,3 +1,6 @@
+///Baseline: Add 1 + 1
+///Fact95: Take the factorial of 95.
+
 #[macro_use]
 extern crate bencher;
 
