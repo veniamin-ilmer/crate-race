@@ -72,3 +72,5 @@ Include this template code in there:
     }
 
 If there are multiple tests for the function, feel free to add in these tests into this file.
+
+Check out [how to add a crate](add_crate.md) for more details of all the other files that need to be modified.
