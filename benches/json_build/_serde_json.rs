@@ -1,9 +1,14 @@
+#[macro_use]
+extern crate serde_json;
+
 use bencher::Bencher;
 
 pub fn baseline(b: &mut Bencher) {
   b.iter(|| {
-    let parsed: serde_json::Value = serde_json::from_str(super::BASELINE).unwrap();
-    assert_eq!(parsed["test"], "abc");
+    let json_build = json!{
+      "test": "abc"
+    };
+    assert_eq!(json_build.to_string(), super::BASELINE);
   });
 }
 
