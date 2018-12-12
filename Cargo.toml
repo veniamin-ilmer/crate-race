@@ -8,11 +8,12 @@ edition = "2018"
 bencher = "*"
 regex = "*"
 
-#json_parse
+#json_parse, json_build
 json = "*"
 serde_json = "*"
 json5 = "*"
 
+#json_build
 json_in_type = "*"
 
 #big_arithmetic

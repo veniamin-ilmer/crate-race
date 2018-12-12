@@ -88,12 +88,8 @@ fn main() {
 
 fn run_bench(func_benched: &str) {
   let output = Command::new("cargo")
-      .arg("bench")
-      .arg("--bench")
-      .arg(func_benched)
-      .output()
-      .expect("Failed to run cargo")
-      .stdout;
+      .arg("bench").arg("--bench").arg(func_benched)
+      .output().expect("Failed to run cargo").stdout;
   let output = String::from_utf8(output).unwrap();
   
   use regex::Regex;
@@ -208,20 +204,15 @@ fn run_bench(func_benched: &str) {
 fn get_cargo_version_str() -> String {
   let output = Command::new("cargo")
     .arg("version")
-    .output()
-    .expect("Failed to run cargo version")
-    .stdout;
+    .output().expect("Failed to run cargo version").stdout;
   let output = String::from_utf8(output).expect("Failed to get output from cargo version");
   output.trim().to_string()
 }
 
 fn get_crate_version_str(crat: &str) -> String {
   let output = Command::new("cargo")
-    .arg("search")
-    .arg(crat)
-    .output()
-    .expect("Failed to run cargo search")
-    .stdout;
+    .arg("search").arg(crat)
+    .output().expect("Failed to run cargo search").stdout;
   String::from_utf8(output)
          .expect("Failed to get output from cargo search")
          .lines().next().expect("Failed to read the first line of cargo search")
