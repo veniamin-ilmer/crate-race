@@ -1,4 +1,4 @@
-#How To Add a Crate
+# Add a Crate
 
 1. Make a file `crate-race/benches/*/_[crate].rs` with benchmarks specific to that crate.
 2. Update `crate-race/benches/*/bench.rs`:
