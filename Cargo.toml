@@ -1,6 +1,6 @@
 [package]
 name = "crate-race"
-version = "0.2.0"
+version = "0.5.0"
 authors = ["Veniamin Ilmer"]
 edition = "2018"
 
@@ -25,6 +25,9 @@ numext-fixed-uint = "*"
 #md5
 md5 = "*"
 md_5 = { version = "*", package = "md-5" }
+
+#csv
+csv = "*"
 
 [[bench]]
 name = "json_parse"
