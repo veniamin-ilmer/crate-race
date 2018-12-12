@@ -1,3 +1,6 @@
+#[macro_use]
+extern crate json;
+
 use bencher::Bencher;
 
 pub fn baseline(b: &mut Bencher) {
