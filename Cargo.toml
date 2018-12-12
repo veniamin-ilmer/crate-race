@@ -28,13 +28,23 @@ md_5 = { version = "*", package = "md-5" }
 csv = "*"
 
 [[bench]]
-name = "json_parse"
-path = "benches/json_parse/bench.rs"
+name = "big_arithmetic"
+path = "benches/big_arithmetic/bench.rs"
 harness = false
 
 [[bench]]
-name = "big_arithmetic"
-path = "benches/big_arithmetic/bench.rs"
+name = "csv_parse"
+path = "benches/csv_parse/bench.rs"
+harness = false
+
+[[bench]]
+name = "json_build"
+path = "benches/json_build/bench.rs"
+harness = false
+
+[[bench]]
+name = "json_parse"
+path = "benches/json_parse/bench.rs"
 harness = false
 
 [[bench]]

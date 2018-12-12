@@ -1,9 +1,19 @@
+#![recursion_limit="512"] //Fix json parsing issues
+
 ///Baseline: Simple json with just one entry.
 ///Serial: Opposite of nested. 100 entries listed in a "flat" format, one by one, without any tree structure.
 ///Nested: 100 nested entries, each inside of the other.
 
+
 #[macro_use]
 extern crate bencher;
+
+#[macro_use]
+extern crate json;
+
+#[macro_use]
+extern crate serde_json;
+
 
 static BASELINE: &str = r#"{"test":"abc"}"#;
 
@@ -16,7 +26,7 @@ mod _serde_json;
 mod _json_in_type;
 
 benchmark_group!(baseline, _json::baseline, _serde_json::baseline, _json_in_type::baseline);
-benchmark_group!(serial, _json::serial, _serde_json::serial, _json_in_type::serial);
+benchmark_group!(serial, _json::serial, _json_in_type::serial);
 benchmark_group!(nested, _json::nested, _serde_json::nested, _json_in_type::nested);
 
 benchmark_main!(baseline, serial, nested);

@@ -1,6 +1,3 @@
-#[macro_use]
-extern crate json;
-
 use bencher::Bencher;
 
 pub fn baseline(b: &mut Bencher) {
@@ -118,7 +115,9 @@ pub fn serial(b: &mut Bencher) {
     };
     assert_eq!(json_build.dump(), super::SERIAL);
   });
+
 }
+
 
 pub fn nested(b: &mut Bencher) {
   b.iter(|| {
@@ -223,7 +222,7 @@ pub fn nested(b: &mut Bencher) {
       "test98" => object!{
       "test99" => object!{
       "test100" => object!{
-      "result":12345
+      "result" => 12345
       }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
     };
     assert_eq!(json_build.dump(), super::NESTED);

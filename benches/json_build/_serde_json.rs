@@ -1,20 +1,18 @@
-#[macro_use]
-extern crate serde_json;
-
 use bencher::Bencher;
 
 pub fn baseline(b: &mut Bencher) {
   b.iter(|| {
-    let json_build = json!{
+    let json_build = json!({
       "test": "abc"
-    };
+    });
     assert_eq!(json_build.to_string(), super::BASELINE);
   });
 }
 
+/*_serde_json returns this out of order
 pub fn serial(b: &mut Bencher) {
   b.iter(|| {
-    let json_build = json!{
+    let json_build = json!({
 "test1": 1, "test2": 2, "test3": 3, "test4": 4, "test5": 5, "test6": 6, "test7": 7, "test8": 8, "test9": 9, "test10": 10,
 "test11": 11, "test12": 12, "test13": 13, "test14": 14, "test15": 15, "test16": 16, "test17": 17, "test18": 18, "test19": 19, "test20": 20,
 "test21": 21, "test22": 22, "test23": 23, "test24": 24, "test25": 25, "test26": 26, "test27": 27, "test28": 28, "test29": 29, "test30": 30,
@@ -25,14 +23,15 @@ pub fn serial(b: &mut Bencher) {
 "test71": 71, "test72": 72, "test73": 73, "test74": 74, "test75": 75, "test76": 76, "test77": 77, "test78": 78, "test79": 79, "test80": 80,
 "test81": 81, "test82": 82, "test83": 83, "test84": 84, "test85": 85, "test86": 86, "test87": 87, "test88": 88, "test89": 89, "test90": 90,
 "test91": 91, "test92": 92, "test93": 93, "test94": 94, "test95": 95, "test96": 96, "test97": 97, "test98": 98, "test99": 99, "test100": 100
-    };
+    });
     assert_eq!(json_build.to_string(), super::SERIAL);
   });
 }
+*/
 
 pub fn nested(b: &mut Bencher) {
   b.iter(|| {
-    let json_build = json!{
+    let json_build = json!({
       "test1": { "test2": {"test3": { "test4": { "test5": { "test6": { "test7": { "test8": { "test9": { "test10": {
       "test11": { "test12": { "test13": { "test14": { "test15": {  "test16": { "test17": {"test18": { "test19": { "test20": {
       "test21": { "test22": { "test23": { "test24": { "test25": { "test26": { "test27": { "test28": { "test29": { "test30": {
@@ -45,7 +44,7 @@ pub fn nested(b: &mut Bencher) {
       "test91": { "test92": { "test93": { "test94": { "test95": { "test96": { "test97": { "test98": { "test99": { "test100": {
         "result":12345
       }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
-    };
+    });
     assert_eq!(json_build.to_string(), super::NESTED);
   });
 }
