@@ -161,7 +161,7 @@ fn run_bench(func_benched: &str) {
   
   //Data
   for (crat, _) in &crats_vec {
-    write_data += &format!("| **{}** |", crat);
+    write_data += &format!("| **[{}](https://crates.io/crates/{})** |", crat, crat);
     for (func, _) in &funcs_vec {
       if let Some(val) = map.get(&(crat, func)) {
         write_data += &format!(" {} |", (*val as f32 / 1_000.0).to_string());
