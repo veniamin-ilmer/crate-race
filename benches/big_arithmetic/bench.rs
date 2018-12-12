@@ -9,8 +9,9 @@ static FACT95: &str = "103299784882390592625997020993947270953977463401173728692
 
 mod _num_bigint;
 mod _uint;
+mod _numext_fixed_uint;
 
-benchmark_group!(baseline, _num_bigint::baseline, _uint::baseline);
-benchmark_group!(fact95, _num_bigint::fact95, _uint::fact95);
+benchmark_group!(baseline, _num_bigint::baseline, _uint::baseline, _numext_fixed_uint::baseline);
+benchmark_group!(fact95, _num_bigint::fact95, _uint::fact95, _numext_fixed_uint::fact95);
 
 benchmark_main!(baseline, fact95);

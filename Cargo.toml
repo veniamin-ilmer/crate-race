@@ -19,6 +19,7 @@ json_in_type = "*"
 num-bigint = "*"
 num-traits = "*"  #Used by bigint code
 uint = "*"
+numext-fixed-uint = "*"
 
 #md5
 md5 = "*"
