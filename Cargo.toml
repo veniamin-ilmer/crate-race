@@ -38,7 +38,7 @@ name = "big_arithmetic"
 path = "benches/big_arithmetic/bench.rs"
 harness = false
 
-[[bench]
+[[bench]]
 name = "char_find"
 path = "benches/char_find/bench.rs"
 harness = false
