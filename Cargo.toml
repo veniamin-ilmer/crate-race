@@ -27,6 +27,7 @@ md_5 = { version = "*", package = "md-5" }
 #csv
 csv = "*"
 quick-csv = "*"
+simple-csv = "*"
 
 [[bench]]
 name = "big_arithmetic"
