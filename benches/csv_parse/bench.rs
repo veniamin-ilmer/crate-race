@@ -115,9 +115,10 @@ Data1,Data2,Data3,Data4,Data5,Data6,Data7,Data8,Data9,Data10,Data11,Data12,Data1
 
 mod _csv;
 mod _quick_csv;
+mod _simple_csv;
 
-benchmark_group!(baseline, _csv::baseline, _quick_csv::baseline);
-benchmark_group!(rows, _csv::rows, _quick_csv::rows);
-benchmark_group!(headers, _csv::headers, _quick_csv::headers);
+benchmark_group!(baseline, _csv::baseline, _quick_csv::baseline, _simple_csv::baseline);
+benchmark_group!(rows, _csv::rows, _quick_csv::rows, _simple_csv::rows);
+benchmark_group!(headers, _csv::headers, _quick_csv::headers, _simple_csv::headers);
 
 benchmark_main!(baseline, rows, headers);
