@@ -114,9 +114,10 @@ static HEADERS: &str = r#"Col1,Col2,Col3,Col4,Col5,Col6,Col7,Col8,Col9,Col10,Col
 Data1,Data2,Data3,Data4,Data5,Data6,Data7,Data8,Data9,Data10,Data11,Data12,Data13,Data14,Data15,Data16,Data17,Data18,Data19,Data20,Data21,Data22,Data23,Data24,Data25,Data26,Data27,Data28,Data29,Data30,Data31,Data32,Data33,Data34,Data35,Data36,Data37,Data38,Data39,Data40,Data41,Data42,Data43,Data44,Data45,Data46,Data47,Data48,Data49,Data50,Data51,Data52,Data53,Data54,Data55,Data56,Data57,Data58,Data59,Data60,Data61,Data62,Data63,Data64,Data65,Data66,Data67,Data68,Data69,Data70,Data71,Data72,Data73,Data74,Data75,Data76,Data77,Data78,Data79,Data80,Data81,Data82,Data83,Data84,Data85,Data86,Data87,Data88,Data89,Data90,Data91,Data92,Data93,Data94,Data95,Data96,Data97,Data98,Data99,Data100"#;
 
 mod _csv;
+mod _quick_csv;
 
-benchmark_group!(baseline, _csv::baseline);
-benchmark_group!(rows, _csv::rows);
-benchmark_group!(headers, _csv::headers);
+benchmark_group!(baseline, _csv::baseline, _quick_csv::baseline);
+benchmark_group!(rows, _csv::rows, _quick_csv::rows);
+benchmark_group!(headers, _csv::headers, _quick_csv::headers);
 
 benchmark_main!(baseline, rows, headers);
