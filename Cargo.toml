@@ -8,30 +8,39 @@ edition = "2018"
 bencher = "*"
 regex = "*"
 
-#json
-json = "*"
-serde_json = "*"
-json5 = "*"
-json_in_type = "*"
-
 #big_nums
 num-bigint = "*"
 num-traits = "*"  #Used by bigint code
 uint = "*"
 numext-fixed-uint = "*"
 
-#md5
-md5 = "*"
-md_5 = { version = "*", package = "md-5" }
+#char_find
+memchar = "*"
+jetscii = "*"
 
 #csv
 csv = "*"
 quick-csv = "*"
 simple-csv = "*"
 
+#json
+json = "*"
+serde_json = "*"
+json5 = "*"
+json_in_type = "*"
+
+#md5
+md5 = "*"
+md_5 = { version = "*", package = "md-5" }
+
 [[bench]]
 name = "big_arithmetic"
 path = "benches/big_arithmetic/bench.rs"
+harness = false
+
+[[bench]
+name = "char_find"
+path = "benches/char_find/bench.rs"
 harness = false
 
 [[bench]]
