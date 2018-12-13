@@ -1,10 +1,12 @@
 cargo 1.31.0 (339d9f9c8 2018-11-16)
 csv,1.0.2,csv_parse
+jetscii,0,char_find
 json,0.11.13,json_parse,json_build
 json5,0.2.2,json_parse
 json_in_type,1.0.0,json_build
 md-5,0.8.0,md5
 md5,0.6.0,md5
+memchar,0,char_find
 num_bigint,0.2.1,big_arithmetic
 numext-fixed-uint,0.1.0,big_arithmetic
 quick-csv,0,csv_parse
