@@ -15,13 +15,13 @@ uint = "*"
 numext-fixed-uint = "*"
 
 #char_find
-memchar = "*"
+memchr = "*"
 jetscii = "*"
 
 #csv
 csv = "*"
 quick-csv = "*"
-simple-csv = "*"
+simple_csv = "*"
 
 #json
 json = "*"

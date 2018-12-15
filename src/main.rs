@@ -41,10 +41,10 @@ fn main() {
       let new_version_str = get_cargo_version_str();
       if line != new_version_str {
         new_cargo_version = true;
-        println!("There is a new cargo version!\nBefor: {}\nAfter:{}\n", line, new_version_str);
+        println!("There is a new cargo version!\nBefor: {}\nAfter:{}\nRerunning all benchmarks with new cargo version...", line, new_version_str);
       }
       write_data += &format!("{}\n", new_version_str);
-      continue; //Skip cargo version
+      continue; //Don't treat this cargo line like a benchmark
     }
     let mut line_vals = line.split(",");
     if let Some(crat) = line_vals.next() {
@@ -55,15 +55,26 @@ fn main() {
         crate_version_split.next(); //Skip crate str
         let new_version = crate_version_split.next().expect(&format!("Crate {} version unavailable!!", crat)); //Get version
         if new_version != old_version || new_cargo_version { //New version available! Rerun benchmarks for all benches for this crate!
-          println!("{} crate updated from {} to {}", crat, old_version, new_version);
-          write_data += &format!("{},{}", crat, new_version); //Update csv to new version
+          println!("{} crate updating from {} to {}...", crat, old_version, new_version);
+          let mut bench_success = true;
+          let mut prepare_write_data = String::new();
           while let Some(bench) = line_vals.next() {
             if !benched_history.contains(bench) {  //Make sure to only run this bench if we didn't already run it before with another crate
-              run_bench(bench);
+              if run_bench(bench) {
+                //Save it so we don't run this bench again
+                benched_history.insert(bench.to_string());  //Need to do to_string here because `bench` is borrowed from `line`.
+              } else {
+                bench_success = false;
+              }
             }
-            benched_history.insert(bench.to_string());  //Need to do to_string here because `bench` is borrowed from `line`.
-            write_data += &format!(",{}", bench); //Rerecord all benches into csv
+            prepare_write_data += &format!(",{}", bench); //Rerecord all benches into csv
           }
+          match bench_success {
+            true => write_data += &format!("{},{}", crat, new_version), //Update csv to new version
+            false => write_data += &format!("{},{}", crat, old_version), //There was a problem, so keep the old version.
+          }
+          write_data += &prepare_write_data;  //Add in all the benches, now that the crate annd verrsion were set.
+
         } else {  //Old version == new version
           write_data += &line;
         }
@@ -86,11 +97,15 @@ fn main() {
 ///For all crates used, run `cargo search [crate]` to get the latest crate version, and save that to the readme.
 ///Save the cargo/rust version into the readme too.
 
-fn run_bench(func_benched: &str) {
-  let output = Command::new("cargo")
+fn run_bench(func_benched: &str) -> bool {
+  let bench_output = Command::new("cargo")
       .arg("bench").arg("--bench").arg(func_benched)
-      .output().expect("Failed to run cargo").stdout;
-  let output = String::from_utf8(output).unwrap();
+      .output().expect("Failed to run cargo");
+  if !bench_output.status.success() {
+    println!("*** Benchmark failed: {} ***", func_benched);
+    return false;
+  }
+  let output = String::from_utf8(bench_output.stdout).unwrap();
   
   use regex::Regex;
   let re = Regex::new(r"test _(.+)::([^\s]+)\s+... bench:.\s+([^\s]+) ns/iter.*").unwrap();
@@ -199,6 +214,8 @@ fn run_bench(func_benched: &str) {
   write_data += "`";
   
   fs::write(format!("D:\\Programming\\crate-race\\benches\\{}\\README.md", func_benched), write_data).expect("Unable to write file");
+  
+  true
 }
 
 fn get_cargo_version_str() -> String {

@@ -1,9 +1,9 @@
 # big_arithmetic
 | | baseline | fact95 |
 | --- | --- | --- |
-| **num_bigint** | 0.228 | 6.494 |
-| **numext_fixed_uint** | 0.153 | 99.926 |
-| **uint** | 0.153 | 983.953 |
+| **[num_bigint](https://crates.io/crates/num_bigint)** | 0.215 | 5.937 |
+| **[numext_fixed_uint](https://crates.io/crates/numext_fixed_uint)** | 0.141 | 94.534 |
+| **[uint](https://crates.io/crates/uint)** | 0.142 | 909.63 |
 
 Speed units are in microseconds per iteration.
 
@@ -12,7 +12,7 @@ Speed units are in microseconds per iteration.
 
 Crate versions tested:
 
-    num-bigint = "0.2.1"        # Big integer implementation for Rust
+    num-bigint = "0.2.2"        # Big integer implementation for Rust
     numext-fixed-uint = "0.1.0"     # Fixed-size uint types.
     uint = "0.5.0"                     # Large fixed-size integers arithmetics
 
