@@ -14,7 +14,8 @@ num-traits = "*"  #Used by bigint code
 uint = "*"
 numext-fixed-uint = "*"
 
-#char_find
+
+#string find
 memchr = "*"
 jetscii = "*"
 
@@ -34,8 +35,8 @@ md5 = "*"
 md_5 = { version = "*", package = "md-5" }
 
 [[bench]]
-name = "math_bigint"
-path = "benches/math_bigint/bench.rs"
+name = "math_bigmultiplication"
+path = "benches/math_bigmultiplication/bench.rs"
 harness = false
 
 [[bench]]
