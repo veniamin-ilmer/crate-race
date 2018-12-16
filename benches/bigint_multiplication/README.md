@@ -1,9 +1,9 @@
-# math_bigmultiplication
+# bigint_multiplication
 | | baseline | fact50 | fact95 |
 | --- | --- | --- | --- |
-| **[num_bigint](https://crates.io/crates/num_bigint)** | 0.261 | 2.954 | 6.008 |
-| **[numext_fixed_uint](https://crates.io/crates/numext_fixed_uint)** | 0.154 | 19.076 | 94.673 |
-| **[uint](https://crates.io/crates/uint)** | 0.179 | 114.373 | 963.61 |
+| **[num_bigint](https://crates.io/crates/num_bigint)** | 0.262 | 2.958 | 6.109 |
+| **[numext_fixed_uint](https://crates.io/crates/numext_fixed_uint)** | 0.152 | 18.957 | 96.549 |
+| **[uint](https://crates.io/crates/uint)** | 0.172 | 115.208 | 936.89 |
 
 Speed units are in microseconds per iteration.
 
