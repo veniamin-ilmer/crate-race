@@ -1,8 +1,8 @@
-# char_find
+# string_findchar
 | | big_str_first | baseline | big_str_last |
 | --- | --- | --- | --- |
 | **[memchr](https://crates.io/crates/memchr)** | 0.003 | 0.003 | 0.491 |
-| **[jetscii](https://crates.io/crates/jetscii)** | 0.016 | 0.017 | 12.579 |
+| **[jetscii](https://crates.io/crates/jetscii)** | 0.016 | 0.018 | 12.393 |
 
 Speed units are in microseconds per iteration.
 
