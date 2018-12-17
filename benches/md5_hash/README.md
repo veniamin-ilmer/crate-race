@@ -1,4 +1,4 @@
-# md5
+# md5_hash
 MD5 hashing
 
 * **Baseline**: Hash "Hello".
