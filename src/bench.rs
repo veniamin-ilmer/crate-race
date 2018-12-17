@@ -220,7 +220,7 @@ fn find_related_branches(crats: &HashSet<&str>, func_benched: &str) -> HashSet<S
     related_benches
 }
 
-fn get_crate_version_str(crat: &str) -> String {
+pub fn get_crate_version_str(crat: &str) -> String {
     let output = Command::new("cargo")
         .arg("search")
         .arg(crat)
@@ -235,7 +235,7 @@ fn get_crate_version_str(crat: &str) -> String {
         .to_string()
 }
 
-fn get_cargo_version_str() -> String {
+pub fn get_cargo_version_str() -> String {
     let output = Command::new("cargo")
         .arg("version")
         .output()
