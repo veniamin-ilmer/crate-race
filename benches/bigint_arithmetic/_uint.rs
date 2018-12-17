@@ -43,11 +43,11 @@ pub fn fact95(b: &mut Bencher) {
       fact *= num_sum;
     }
     
-    let ten = U256::from(10);
-    assert_eq!(U256::from(0), fact % ten); //Most right digit
+    let ten = U512::from(10);
+    assert_eq!(U512::from(0), fact % ten); //Most right digit
     for _ in 0..148 {    //Remove all other digits
       fact /= ten;
     }
-    assert_eq!(U256::from(1), fact); //Most left digit
+    assert_eq!(U512::from(1), fact); //Most left digit
   });
 }

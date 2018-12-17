@@ -2,6 +2,8 @@ static BENCHES_DIR: &str = "D:\\Programming\\crate-race\\benches";
 
 use std::collections::{HashMap, HashSet};
 use std::process::Command;
+use std::fs;
+use std::io::{BufRead, BufReader};
 
 ///Run benchmarks for func_benched.
 ///The path and everything for func_benched is configured in cargo.toml.
@@ -22,9 +24,9 @@ pub fn run_bench(func_benched: &str) -> bool {
 
     let output = String::from_utf8(bench_output.stdout).unwrap();
 
-    let mut map; //Key: (crate, function), Value: Speed
-    let mut crats; //List of crates involved with this benchmark
-    let mut funcs; //List of functions involved with this benchmark
+    //map = Key: (crate, function), Value: Speed
+    //crats = List of crates involved with this benchmark
+    //funcs = List of functions involved with this benchmark
 
     let (map, crats, funcs) = build_hashes(&output);
 

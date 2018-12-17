@@ -6,8 +6,8 @@ MD5 hashing
 
 | | baseline | lorem |
 | --- | --- | --- |
-| **[md_5](https://crates.io/crates/md_5)** | *0.209* | *83.275* |
-| **[md5](https://crates.io/crates/md5)** | 0.949 | 125.097 |
+| **[md_5](https://crates.io/crates/md_5)** | *0.209* | *83.587* |
+| **[md5](https://crates.io/crates/md5)** | 0.944 | 125.901 |
 
 Speed units are in microseconds per iteration. Less is better.
 
