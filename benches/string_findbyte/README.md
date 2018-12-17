@@ -1,16 +1,20 @@
 # string_findbyte
 Search for just 1 byte inside of a byte array.
 
-* Baseline: Just one character string, length 1.
-* Big_Str_First: 50kb string. Find character at the beginning of the string.
-* Big_Str_Last: 50kb string. Find character at the end of the string.
+* **Baseline**: Just one character string, length 1.
+* **Big_Str_First**: 50kb string. Find character at the beginning of the string.
+* **Big_Str_Last**: 50kb string. Find character at the end of the string.
 
 | | big_str_first | baseline | big_str_last |
 | --- | --- | --- | --- |
-| **[memchr](https://crates.io/crates/memchr)** | *0.003* | *0.003* | *0.478* |
-| **[jetscii](https://crates.io/crates/jetscii)** | 0.016 | 0.017 | 12.596 |
+| **[memchr](https://crates.io/crates/memchr)** | *0.003* | *0.003* | *0.518* |
+| **[jetscii](https://crates.io/crates/jetscii)** | 0.016 | 0.018 | 12.97 |
 
 Speed units are in microseconds per iteration. Less is better.
+
+## Related Functions
+
+* [string_findsubstring](../string_findsubstring)
 
 ## Crate versions
 

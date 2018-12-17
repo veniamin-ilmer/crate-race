@@ -1,13 +1,13 @@
 # md5
 MD5 hashing
 
-* Baseline: Hash "Hello".
-* Lorem: Hash 60k of Lorem Ipsum.
+* **Baseline**: Hash "Hello".
+* **Lorem**: Hash 60k of Lorem Ipsum.
 
 | | baseline | lorem |
 | --- | --- | --- |
-| **[md_5](https://crates.io/crates/md_5)** | *0.21* | *82.858* |
-| **[md5](https://crates.io/crates/md5)** | 0.925 | 124.627 |
+| **[md_5](https://crates.io/crates/md_5)** | *0.209* | *83.275* |
+| **[md5](https://crates.io/crates/md5)** | 0.949 | 125.097 |
 
 Speed units are in microseconds per iteration. Less is better.
 

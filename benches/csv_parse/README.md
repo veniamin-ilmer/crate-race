@@ -1,15 +1,15 @@
 # csv_parse
 Parsing CSVs, and retrieving values at specific rows/columns.
 
-* Baseline: Simple csv with just one entry.
-* Rows: 1 header, 100 rows
-* Headers: 100 headers, 1 row
+* **Baseline**: Simple csv with just one entry.
+* **Rows**: 1 header, 100 rows
+* **Headers**: 100 headers, 1 row
 
 | | baseline | headers | rows |
 | --- | --- | --- | --- |
-| **[quick_csv](https://crates.io/crates/quick_csv)** | *0.41* | - | *93.741* |
-| **[csv](https://crates.io/crates/csv)** | 15.566 | *37.832* | 156.233 |
-| **[simple_csv](https://crates.io/crates/simple_csv)** | 0.413 | 137.025 | 171.832 |
+| **[quick_csv](https://crates.io/crates/quick_csv)** | *0.405* | - | *90.611* |
+| **[csv](https://crates.io/crates/csv)** | 15.363 | *37.9* | 157.61 |
+| **[simple_csv](https://crates.io/crates/simple_csv)** | 0.415 | 137.242 | 170.633 |
 
 Speed units are in microseconds per iteration. Less is better.
 

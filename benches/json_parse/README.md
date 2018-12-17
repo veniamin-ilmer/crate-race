@@ -1,17 +1,21 @@
 # json_parse
 Parsing JSONs, and retrieving values at specific rows/columns.
 
-* Baseline: Simple json with just one entry.
-* Serial: Opposite of nested. 100 entries listed in a "flat" format, one by one, without any tree structure.
-* Nested: 100 nested entries, each inside of the other.
+* **Baseline**: Simple json with just one entry.
+* **Serial**: Opposite of nested. 100 entries listed in a "flat" format, one by one, without any tree structure.
+* **Nested**: 100 nested entries, each inside of the other.
 
 | | baseline | serial | nested |
 | --- | --- | --- | --- |
-| **[json](https://crates.io/crates/json)** | *0.185* | *7.54* | *11.964* |
-| **[serde_json](https://crates.io/crates/serde_json)** | 0.288 | 23.519 | 26.221 |
-| **[json5](https://crates.io/crates/json5)** | 2.288 | 143.196 | 169.88 |
+| **[json](https://crates.io/crates/json)** | *0.188* | *7.727* | *12.52* |
+| **[serde_json](https://crates.io/crates/serde_json)** | 0.292 | 22.373 | 25.617 |
+| **[json5](https://crates.io/crates/json5)** | 2.442 | 148.581 | 152.916 |
 
 Speed units are in microseconds per iteration. Less is better.
+
+## Related Functions
+
+* [json_build](../json_build)
 
 ## Crate versions
 

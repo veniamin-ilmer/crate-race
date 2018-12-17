@@ -23,9 +23,8 @@ use std::process::Command;
 ///If it is different, run through all benches listed, and rerun all of them.
 
 fn main() {
-  let f = fs::File::open("D:\\Programming\\crate-race\\crate_list.csv")
-                   .expect("Unable to open crate_list.csv");
-  let f = BufReader::new(f);
+  let f = BufReader::new(fs::File::open("D:\\Programming\\crate-race\\crate_list.csv")
+                   .expect("Unable to open crate_list.csv"));
 
   let mut benched_history = std::collections::HashSet::new();
   
@@ -73,7 +72,7 @@ fn main() {
             true => write_data += &format!("{},{}", crat, new_version), //Update csv to new version
             false => write_data += &format!("{},{}", crat, old_version), //There was a problem, so keep the old version.
           }
-          write_data += &prepare_write_data;  //Add in all the benches, now that the crate annd verrsion were set.
+          write_data += &prepare_write_data;  //Add in all the benches, now that the crate and version were set.
 
         } else {  //Old version == new version
           write_data += &line;
@@ -221,7 +220,37 @@ fn run_bench(func_benched: &str) -> bool {
     write_data += "\n";
   }
   
-  write_data += "\nSpeed units are in microseconds per iteration. Less is better.\n\n## Crate versions\n\n";
+  write_data += "\nSpeed units are in microseconds per iteration. Less is better.\n";
+  
+  {
+    //Find any related benches.
+    let mut related_benches = HashSet::new();
+    
+    let f = BufReader::new(fs::File::open("D:\\Programming\\crate-race\\crate_list.csv")
+                   .expect("Unable to open crate_list.csv"));
+    for line in f.lines() {
+      let line = line.expect("Unable to read line from crate_list.csv in run_bench function");
+      let mut line_vals = line.split(",");
+      if let Some(crat) = line_vals.next() {
+        if crats.contains(crat) {
+          line_vals.next(); //Skip version
+          while let Some(bench) = line_vals.next() {
+            if bench != func_benched {
+              related_benches.insert(bench.to_string());
+            }
+          }
+        }
+      }
+    }
+    if related_benches.len() > 0 {
+      write_data += "\n## Related Functions\n\n";
+      for bench in related_benches {
+        write_data += &format!("* [{}](../{})\n", bench, bench);
+      }
+    }
+  }
+  
+  write_data += "\n## Crate versions\n\n";
   
   for (crat, _) in &crats_vec {
     write_data += &format!("    {}\n", get_crate_version_str(crat));
