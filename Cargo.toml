@@ -1,6 +1,6 @@
 [package]
 name = "crate-race"
-version = "0.7.0"
+version = "0.8.0"
 authors = ["Veniamin Ilmer"]
 edition = "2018"
 
@@ -63,8 +63,8 @@ path = "benches/json_parse/bench.rs"
 harness = false
 
 [[bench]]
-name = "md5"
-path = "benches/md5/bench.rs"
+name = "md5_hash"
+path = "benches/md5_hash/bench.rs"
 harness = false
 
 [[bench]]
