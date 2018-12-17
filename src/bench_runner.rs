@@ -78,7 +78,6 @@ pub fn run_bench(func_benched: &str) -> bool {
         }
         write_data += "\n";
     }
-
     write_data += "\nSpeed units are in microseconds per iteration. Less is better.\n";
 
     let related_benches = find_related_branches(&crats, func_benched);
@@ -88,15 +87,14 @@ pub fn run_bench(func_benched: &str) -> bool {
             write_data += &format!("* [{}](../{})\n", bench, bench);
         }
     }
-
+    
     write_data += "\n## Crate versions\n\n";
-
     for (crat, _) in &crats_sorted {
         write_data += &format!("    {}\n", get_crate_version_str(crat));
     }
 
     write_data += &format!("\nCompiled on: `{}`", &get_cargo_version_str());
-
+    
     fs::write(
         format!("{}\\{}\\README.md", BENCHES_DIR, func_benched),
         write_data,
