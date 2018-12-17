@@ -1,8 +1,8 @@
-///Parsing JSONs, and retrieving values at specific rows/columns.
-///
-///* **Baseline**: Simple json with just one entry.
-///* **Serial**: Opposite of nested. 100 entries listed in a "flat" format, one by one, without any tree structure.
-///* **Nested**: 100 nested entries, each inside of the other.
+//!Parsing JSONs, and retrieving values at specific rows/columns.
+//!
+//!* **Baseline**: Simple json with just one entry.
+//!* **Serial**: Opposite of nested. 100 entries listed in a "flat" format, one by one, without any tree structure.
+//!* **Nested**: 100 nested entries, each inside of the other.
 
 #[macro_use]
 extern crate bencher;
