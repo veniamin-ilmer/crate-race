@@ -1,5 +1,5 @@
 # Crate Race
-Do you want to see which crates will run a function faster?
+Wondering which crate can do some functionality faster?
 
 Crate race feeds the same kind of inputs into crate functions, and benchmarks the results.
 
