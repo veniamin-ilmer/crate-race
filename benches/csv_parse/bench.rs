@@ -1,8 +1,8 @@
-///Parsing CSVs, and retrieving values at specific rows/columns.
-///
-///* **Baseline**: Simple csv with just one entry.
-///* **Rows**: 1 header, 100 rows
-///* **Headers**: 100 headers, 1 row
+//!Parsing CSVs, and retrieving values at specific rows/columns.
+//!
+//!* **Baseline**: Simple csv with just one entry.
+//!* **Rows**: 1 header, 100 rows
+//!* **Headers**: 100 headers, 1 row
 
 #[macro_use]
 extern crate bencher;
