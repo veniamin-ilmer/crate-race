@@ -7,8 +7,8 @@ pub fn baseline(b: &mut Bencher) {
   b.iter(|| {
     let num_1 = U512::one();
     let mut num_sum = U512::one();
-    num_sum *= &num_1;
-    assert_eq!(num_sum.to_string(), super::BASELINE);
+    num_sum += &num_1;
+    assert_eq!(U512::from(2), num_sum);
   });
 }
 
@@ -22,7 +22,12 @@ pub fn fact50(b: &mut Bencher) {
       num_sum += &num_1;
       fact *= &num_sum;
     }
-    assert_eq!(fact.to_string(), super::FACT50);
+    let ten = U256::from(10);
+    assert_eq!(U256::from(0), &fact % &ten); //Most right digit
+    for _ in 0..64 {    //Remove all other digits
+      fact /= &ten;
+    }
+    assert_eq!(U256::from(3), fact); //Most left digit
   });
 }
 
@@ -36,6 +41,11 @@ pub fn fact95(b: &mut Bencher) {
       num_sum += &num_1;
       fact *= &num_sum;
     }
-    assert_eq!(fact.to_string(), super::FACT95);
+    let ten = U256::from(10);
+    assert_eq!(U256::from(0), &fact % &ten); //Most right digit
+    for _ in 0..148 {    //Remove all other digits
+      fact /= &ten;
+    }
+    assert_eq!(U256::from(1), fact); //Most left digit
   });
 }
