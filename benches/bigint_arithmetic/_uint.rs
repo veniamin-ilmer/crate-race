@@ -7,8 +7,8 @@ pub fn baseline(b: &mut Bencher) {
   b.iter(|| {
     let num_1 = U512::from(1);
     let mut num_sum = U512::from(1);
-    num_sum *= num_1;
-    assert_eq!(num_sum.to_string(), super::BASELINE);
+    num_sum += num_1;
+    assert_eq!(U512::from(2), num_sum);
   });
 }
 
