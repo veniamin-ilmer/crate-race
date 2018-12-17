@@ -139,7 +139,7 @@ fn run_bench(func_benched: &str) -> bool {
         count += 1;
       }
     }
-    crats_vec.push((crat, sum / count));
+    crats_vec.push((crat, sum / count));  //Save the average
   }
   crats_vec.sort_by_key(|k| k.1);
 
@@ -154,9 +154,25 @@ fn run_bench(func_benched: &str) -> bool {
         count += 1;
       }
     }
-    funcs_vec.push((func, sum / count));
+    funcs_vec.push((func, sum / count));  //Save the average
   }
   funcs_vec.sort_by_key(|k| k.1);
+  
+  //Save the smallest values per function to embolden later
+  let mut smallest_map = HashMap::new();
+  for func in &funcs {
+    let mut smallest = u32::max_value();
+    let mut smallest_crat = "";
+    for crat in &crats {
+      if let Some(val) = map.get(&(crat, func)) {
+        if *val < smallest {
+          smallest = *val;
+          smallest_crat = crat;
+        }
+      }
+    }
+    smallest_map.insert(func, smallest_crat);  //Save the smallest
+  }
 
   let mut write_data = format!("# {}\n", func_benched);
 
@@ -179,7 +195,11 @@ fn run_bench(func_benched: &str) -> bool {
     write_data += &format!("| **[{}](https://crates.io/crates/{})** |", crat, crat);
     for (func, _) in &funcs_vec {
       if let Some(val) = map.get(&(crat, func)) {
-        write_data += &format!(" {} |", (*val as f32 / 1_000.0).to_string());
+        if smallest_map.get(func) == Some(crat) {  //Do we need to bolden it?
+          write_data += &format!(" *{}* |", (*val as f32 / 1_000.0).to_string());
+        } else {
+          write_data += &format!(" {} |", (*val as f32 / 1_000.0).to_string());
+        }
       } else {
         write_data += " - |";
       }

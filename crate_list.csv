@@ -1,6 +1,8 @@
 cargo 1.31.0 (339d9f9c8 2018-11-16)
+aho_corasick,0.6.9,string_findsubstring
 csv,1.0.5,csv_parse
-jetscii,0.4.3,string_findchar
+galil_seiferas,0.1.5,string_findsubstring
+jetscii,0.4.3,string_findchar,string_findsubstring
 json,0.11.13,json_parse,json_build
 json5,0.2.2,json_parse
 json_in_type,1.0.0,json_build
@@ -12,4 +14,6 @@ numext-fixed-uint,0.1.0,bigint_multiplication,bigint_parsestr
 quick-csv,0.1.6,csv_parse
 serde_json,1.0.33,json_parse,json_build
 simple_csv,0.0.15,csv_parse
+subslice,0.2.0,string_findsubstring
+twoway,0.2.0,string_findsubstring
 uint,0.5.0,bigint_multiplication,bigint_parsestr

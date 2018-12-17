@@ -14,10 +14,13 @@ num-traits = "*"  #Used by bigint code
 uint = "*"
 numext-fixed-uint = "*"
 
-
 #string find
 memchr = "*"
 jetscii = "*"
+galil-seiferas = "*"
+twoway = "*"
+aho-corasick = "*"
+subslice = "*"
 
 #csv
 csv = "*"
@@ -45,11 +48,6 @@ path = "benches/bigint_parsestr/bench.rs"
 harness = false
 
 [[bench]]
-name = "string_findchar"
-path = "benches/string_findchar/bench.rs"
-harness = false
-
-[[bench]]
 name = "csv_parse"
 path = "benches/csv_parse/bench.rs"
 harness = false
@@ -67,4 +65,14 @@ harness = false
 [[bench]]
 name = "md5"
 path = "benches/md5/bench.rs"
+harness = false
+
+[[bench]]
+name = "string_findchar"
+path = "benches/string_findchar/bench.rs"
+harness = false
+
+[[bench]]
+name = "string_findsubstring"
+path = "benches/string_findsubstring/bench.rs"
 harness = false
