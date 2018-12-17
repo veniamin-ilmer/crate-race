@@ -1,4 +1,4 @@
-# bigint_multiplication
+# bigint_arithmetic
 Multiplying numbers larger than what's possible with a normal 64 bit processor.
 
 * **Baseline**: Multiply 1 * 1
