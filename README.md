@@ -13,9 +13,9 @@ You can look through the code to judge which crate to use.
 
 Just because one crate has a faster speed for a specific function, does not automatically make that crate "better".
 
-Other crates may specialize in other forms of functionality. Other crates may also be more user friendly to use than another.
+Other crates may specialize in other forms of functionality. Other crates may also be more user friendly to use.
 
-Use your best judgement, and try not to generalize after just looking at one benchmark.
+Try not to generalize after just looking at one benchmark.
 
 ## Benchmarking Machine Specs
 
