@@ -220,16 +220,6 @@ fn find_related_branches(crats: &HashSet<&str>, func_benched: &str) -> HashSet<S
     related_benches
 }
 
-fn get_cargo_version_str() -> String {
-    let output = Command::new("cargo")
-        .arg("version")
-        .output()
-        .expect("Failed to run cargo version")
-        .stdout;
-    let output = String::from_utf8(output).expect("Failed to get output from cargo version");
-    output.trim().to_string()
-}
-
 fn get_crate_version_str(crat: &str) -> String {
     let output = Command::new("cargo")
         .arg("search")
@@ -243,4 +233,14 @@ fn get_crate_version_str(crat: &str) -> String {
         .next()
         .expect("Failed to read the first line of cargo search")
         .to_string()
+}
+
+fn get_cargo_version_str() -> String {
+    let output = Command::new("cargo")
+        .arg("version")
+        .output()
+        .expect("Failed to run cargo version")
+        .stdout;
+    let output = String::from_utf8(output).expect("Failed to get output from cargo version");
+    output.trim().to_string()
 }
