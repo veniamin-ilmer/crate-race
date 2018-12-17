@@ -40,8 +40,8 @@ pub fn run_bench(func_benched: &str) -> bool {
 
     for line in f.lines() {
         let line = line.expect("Unable to read line from bench.rs to read comments");
-        if line.len() >= 3 && &line[0..3] == "///" {
-            write_data += &format!("{}\n", &line[3..]); //Remove "///"
+        if line.len() >= 3 && &line[0..3] == "//!" {
+            write_data += &format!("{}\n", &line[3..]); //Remove "//!"
         }
     }
     write_data += "\n";
