@@ -3,7 +3,9 @@ All benchmarks are listed in folders with the naming:
 
 [*subject*]_[*action*]
 
-For example, if you want to find a benchmark for parsing JSON, you would search for the subject JSON, and action parsing, or: `json_parse`
+For example, if you want to find a benchmark for parsing JSON, you would search for the subject JSON, and action parsing, or:
+
+    json_parse
 
 ## Contents
 
