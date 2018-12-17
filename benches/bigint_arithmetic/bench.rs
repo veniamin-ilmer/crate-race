@@ -3,6 +3,8 @@
 //!* **Baseline**: Multiply 1 * 1
 //!* **Fact50**: Take the factorial of 50. (Gets up to 256 bits)
 //!* **Fact95**: Take the factorial of 95. (Gets up to 512 bits)
+//!
+//!Note: We cannot include GMP or unstable crates. GMP can't be included because it is not crossplatform (not available in Windows).
 
 #[macro_use]
 extern crate bencher;
