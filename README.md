@@ -1,9 +1,5 @@
 # Crate Race
-Are you looking at two Rust Crates that do the same thing?
-
-Want to know which crate to use?
-
-Well Crate Race might help!
+Do you want to see which crates will run a function faster?
 
 Crate race feeds the same kind of inputs into crate functions, and benchmarks the results.
 
@@ -12,6 +8,14 @@ Crate race feeds the same kind of inputs into crate functions, and benchmarks th
 Each benchmark comes with the actual code used to run each of the functions.
 
 You can look through the code to judge which crate to use.
+
+## Forewarning
+
+Just because one crate has a faster speed for a specific function, does not automatically make that crate "better".
+
+Other crates may specialize in other forms of functionality. Other crates may also be more user friendly to use than another.
+
+Use your best judgement, and try not to generalize after just looking at one benchmark.
 
 ## Benchmarking Machine Specs
 
@@ -41,13 +45,6 @@ If a crate has an extra function that other crates do not have, Crate Race will 
 Although Crate Race checks that the function returned a correct value expected for that function, it will not test the functions' edge cases being handled correctly.
 
 We are benchmarking, not QAing.
-
-### Subjective Comparison
-Some crates may be more easy to use than others, or have some other additional functionality that other crates don't have.
-
-Crate Race will not be rating these factors. It will only be benchmarking the functions.
-
-However the code used to benchmark the function will always be provided, so you can look at the code and judge for yourself how hard or easy it will be to use.
 
 ## Contributing
 Crate Race will only benchmark crates that share functionality with other crates.
