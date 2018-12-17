@@ -17,8 +17,8 @@ pub fn rows(b: &mut Bencher) {
     let mut rdr = ReaderBuilder::new()
        .from_reader(super::ROWS.as_bytes());
 
-    let row = rdr.records().nth(99).unwrap().unwrap();  //99 is the 100th row
-    assert_eq!(&row[0], "Row100");
+    let row = rdr.records().nth(999).unwrap().unwrap();  //999 is the 1000th row
+    assert_eq!(&row[0], "Row1000");
   });
 }
 
@@ -28,6 +28,6 @@ pub fn headers(b: &mut Bencher) {
        .from_reader(super::HEADERS.as_bytes());
 
     let row = rdr.records().next().unwrap().unwrap();
-    assert_eq!(&row[99], "Data100");  //99 is the 100th column
+    assert_eq!(&row[999], "Data1000");  //999 is the 1000th column
   });
 }
