@@ -41,7 +41,7 @@ fn main() {
       let new_version_str = get_cargo_version_str();
       if line != new_version_str {
         new_cargo_version = true;
-        println!("There is a new cargo version!\nBefor: {}\nAfter:{}\nRerunning all benchmarks with new cargo version...", line, new_version_str);
+        println!("There is a new cargo version!\nBefore:{}\nAfter: {}\nRerunning all benchmarks with new cargo version...", line, new_version_str);
       }
       write_data += &format!("{}\n", new_version_str);
       continue; //Don't treat this cargo line like a benchmark
@@ -176,6 +176,20 @@ fn run_bench(func_benched: &str) -> bool {
 
   let mut write_data = format!("# {}\n", func_benched);
 
+  //Copy a description of each func from bench.rs comments
+  let f = fs::File::open(format!("D:\\Programming\\crate-race\\benches\\{}\\bench.rs", func_benched))
+               .expect("Unable to open bench.rs to read comments");
+  let f = BufReader::new(f);
+
+  for line in f.lines() {
+    let line = line.expect("Unable to read line from bench.rs to read comments");
+    if line.len() >= 3 && &line[0..3] == "///" {
+      write_data += &line[3..];
+      write_data += "\n";
+    }
+  }
+  write_data += "\n";
+
   //Header
   write_data += "| |";
   for (func, _) in &funcs_vec {
@@ -207,23 +221,7 @@ fn run_bench(func_benched: &str) -> bool {
     write_data += "\n";
   }
   
-  write_data += "\nSpeed units are in microseconds per iteration.\n\n";
-
-  //Copy a description of each func from bench.rs comments
-  let f = fs::File::open(format!("D:\\Programming\\crate-race\\benches\\{}\\bench.rs", func_benched))
-               .expect("Unable to open bench.rs to read comments");
-  let f = BufReader::new(f);
-
-  for line in f.lines() {
-    let line = line.expect("Unable to read line from bench.rs to read comments");
-    if line.len() > 3 && &line[0..3] == "///" {
-      write_data += "* ";
-      write_data += &line[3..];
-      write_data += "\n";
-    }
-  }
-
-  write_data += "\nCrate versions tested:\n\n";
+  write_data += "\nSpeed units are in microseconds per iteration. Less is better.\n\n##Crate versions\n\n";
   
   for (crat, _) in &crats_vec {
     write_data += &format!("    {}\n", get_crate_version_str(crat));

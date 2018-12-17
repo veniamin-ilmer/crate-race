@@ -1,5 +1,7 @@
-///Baseline: Convert "1" string into a number, and then back into a string again.
-///Big_num: Convert a 149 digit string into a number, and then back into a string again.
+///Parsing large numbers from strings.
+///
+///* Baseline: Convert "1" string into a number, and then back into a string again.
+///* Big_num: Convert a 149 digit string into a number, and then back into a string again.
 
 #[macro_use]
 extern crate bencher;

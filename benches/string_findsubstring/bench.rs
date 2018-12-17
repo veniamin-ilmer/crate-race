@@ -1,7 +1,9 @@
-///Baseline: Searching "abc123" inside of "1abc123"
-///Big_Pattern: Search for a 50kb string inside of "1" + the 50kb string. Chars for this string were random.
-///Monotonous: 50kb string of all 1s. Find "abc123" at the end.
-///Almost: 50kb string repeating "abc12" without the ending "3". Find "abc123" at the end of the string.
+///Search for the position of a string inside of a string.
+///
+///* Baseline: Searching "abc123" inside of "1abc123"
+///* Big_Pattern: Search for a 50kb string inside of "1" + the 50kb string. Chars for this string were random.
+///* Monotonous: 50kb string of all 1s. Find "abc123" at the end.
+///* Almost: 50kb string repeating "abc12" without the ending "3". Find "abc123" at the end of the string.
 
 #[macro_use]
 extern crate bencher;

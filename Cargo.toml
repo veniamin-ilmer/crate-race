@@ -68,8 +68,8 @@ path = "benches/md5/bench.rs"
 harness = false
 
 [[bench]]
-name = "string_findchar"
-path = "benches/string_findchar/bench.rs"
+name = "string_findbyte"
+path = "benches/string_findbyte/bench.rs"
 harness = false
 
 [[bench]]
