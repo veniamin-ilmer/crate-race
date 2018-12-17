@@ -221,7 +221,7 @@ fn run_bench(func_benched: &str) -> bool {
     write_data += "\n";
   }
   
-  write_data += "\nSpeed units are in microseconds per iteration. Less is better.\n\n##Crate versions\n\n";
+  write_data += "\nSpeed units are in microseconds per iteration. Less is better.\n\n## Crate versions\n\n";
   
   for (crat, _) in &crats_vec {
     write_data += &format!("    {}\n", get_crate_version_str(crat));

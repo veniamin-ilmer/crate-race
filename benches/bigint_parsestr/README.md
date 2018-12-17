@@ -6,13 +6,13 @@ Parsing large numbers from strings.
 
 | | baseline | big_num |
 | --- | --- | --- |
-| **[num_bigint](https://crates.io/crates/num_bigint)** | 0.264 | *1.258* |
-| **[numext_fixed_uint](https://crates.io/crates/numext_fixed_uint)** | 0.154 | 90.536 |
-| **[uint](https://crates.io/crates/uint)** | *0.152* | 910.27 |
+| **[num_bigint](https://crates.io/crates/num_bigint)** | 0.256 | *1.261* |
+| **[numext_fixed_uint](https://crates.io/crates/numext_fixed_uint)** | 0.156 | 91.223 |
+| **[uint](https://crates.io/crates/uint)** | *0.153* | 910.022 |
 
 Speed units are in microseconds per iteration. Less is better.
 
-##Crate versions
+## Crate versions
 
     num-bigint = "0.2.2"        # Big integer implementation for Rust
     numext-fixed-uint = "0.1.0"     # Fixed-size uint types.

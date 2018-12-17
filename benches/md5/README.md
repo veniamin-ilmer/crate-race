@@ -6,12 +6,12 @@ MD5 hashing
 
 | | baseline | lorem |
 | --- | --- | --- |
-| **[md_5](https://crates.io/crates/md_5)** | *0.207* | *84.153* |
-| **[md5](https://crates.io/crates/md5)** | 0.929 | 126.648 |
+| **[md_5](https://crates.io/crates/md_5)** | *0.21* | *82.858* |
+| **[md5](https://crates.io/crates/md5)** | 0.925 | 124.627 |
 
 Speed units are in microseconds per iteration. Less is better.
 
-##Crate versions
+## Crate versions
 
     md-5 = "0.8.0"     # MD5 hash function
     md5 = "0.6.1"                 # The package provides the MD5 hash function.

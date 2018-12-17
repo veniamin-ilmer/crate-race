@@ -1,5 +1,5 @@
 # json_parse
-Building JSON strings using objects.
+Parsing JSONs, and retrieving values at specific rows/columns.
 
 * Baseline: Simple json with just one entry.
 * Serial: Opposite of nested. 100 entries listed in a "flat" format, one by one, without any tree structure.
@@ -7,13 +7,13 @@ Building JSON strings using objects.
 
 | | baseline | serial | nested |
 | --- | --- | --- | --- |
-| **[json](https://crates.io/crates/json)** | *0.183* | *7.342* | *11.791* |
-| **[serde_json](https://crates.io/crates/serde_json)** | 0.286 | 22.549 | 25.625 |
-| **[json5](https://crates.io/crates/json5)** | 2.319 | 142.145 | 150.489 |
+| **[json](https://crates.io/crates/json)** | *0.185* | *7.54* | *11.964* |
+| **[serde_json](https://crates.io/crates/serde_json)** | 0.288 | 23.519 | 26.221 |
+| **[json5](https://crates.io/crates/json5)** | 2.288 | 143.196 | 169.88 |
 
 Speed units are in microseconds per iteration. Less is better.
 
-##Crate versions
+## Crate versions
 
     json = "0.11.13"                          # JSON implementation in Rust
     serde_json = "1.0.33"                      # A JSON serialization file format

@@ -7,12 +7,12 @@ Search for just 1 byte inside of a byte array.
 
 | | big_str_first | baseline | big_str_last |
 | --- | --- | --- | --- |
-| **[memchr](https://crates.io/crates/memchr)** | *0.003* | *0.003* | *0.487* |
-| **[jetscii](https://crates.io/crates/jetscii)** | 0.016 | 0.018 | 12.723 |
+| **[memchr](https://crates.io/crates/memchr)** | *0.003* | *0.003* | *0.478* |
+| **[jetscii](https://crates.io/crates/jetscii)** | 0.016 | 0.017 | 12.596 |
 
 Speed units are in microseconds per iteration. Less is better.
 
-##Crate versions
+## Crate versions
 
     memchr = "2.1.2"           # Safe interface to memchr.
     jetscii = "0.4.3"    # A tiny library to efficiently search strings and byte slices for sets of ASCII characters or bytes.

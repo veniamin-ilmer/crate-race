@@ -8,15 +8,15 @@ Search for the position of a string inside of a string.
 
 | | baseline | monotonous | almost | big_pattern |
 | --- | --- | --- | --- | --- |
-| **[jetscii](https://crates.io/crates/jetscii)** | 0.019 | 8.159 | 38.081 | *2.295* |
-| **[subslice](https://crates.io/crates/subslice)** | 0.035 | *0.517* | 31.234 | 28.025 |
-| **[twoway](https://crates.io/crates/twoway)** | 0.024 | 4.996 | *27.335* | 100.646 |
-| **[galil_seiferas](https://crates.io/crates/galil_seiferas)** | *0.017* | 58.214 | 59.59 | 114.461 |
-| **[aho_corasick](https://crates.io/crates/aho_corasick)** | 2.061 | 2.72 | 247.37 | 5806.723 |
+| **[jetscii](https://crates.io/crates/jetscii)** | 0.019 | 7.947 | 38.077 | *2.24* |
+| **[subslice](https://crates.io/crates/subslice)** | 0.032 | *0.526* | 30.882 | 28.045 |
+| **[twoway](https://crates.io/crates/twoway)** | 0.024 | 4.96 | *27.326* | 100.316 |
+| **[galil_seiferas](https://crates.io/crates/galil_seiferas)** | *0.017* | 59.138 | 59.58 | 114.507 |
+| **[aho_corasick](https://crates.io/crates/aho_corasick)** | 2.067 | 2.734 | 247.246 | 6090.251 |
 
 Speed units are in microseconds per iteration. Less is better.
 
-##Crate versions
+## Crate versions
 
     jetscii = "0.4.3"    # A tiny library to efficiently search strings and byte slices for sets of ASCII characters or bytes.
     subslice = "0.2.0"          # Fast subslice search
