@@ -6,8 +6,8 @@ jetscii,0.4.3,string_findbyte,string_findsubstring
 json,0.11.13,json_parse,json_build
 json5,0.2.2,json_parse
 json_in_type,1.0.0,json_build
-md-5,0.8.0,md5
-md5,0.6.1,md5
+md-5,0.8.0,md5_hash
+md5,0.6.1,md5_hash
 memchr,2.1.2,string_findbyte
 num_bigint,0.2.2,bigint_multiplication,bigint_parsestr
 numext-fixed-uint,0.1.1,bigint_multiplication,bigint_parsestr
