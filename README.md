@@ -15,7 +15,7 @@ You can look through the code to judge which crate to use.
 
 ## Benchmarking Machine Specs
 
-* Operating System: Windows 7 Professional (Support for multiple operating systems planned for the future.)
+* Operating System: Windows 7 Professional
 * Processor: [Intel Core i5-6600 Processor](https://en.wikichip.org/wiki/intel/core_i5/i5-6600) quad-core 64-bit x86, 3.3 GHz base frequency.
 * Motherboard: [Gigabyte LGA1151 Intel B150 Micro ATX](https://www.amazon.com/gp/product/B017WL3V4Q/)
 * RAM: [GeIL EVO POTENZA 16GB DDR4 SDRAM](https://www.amazon.com/gp/product/B01EWBFZSE) DDR4 2400 (PC4 19200)
