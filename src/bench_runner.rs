@@ -1,6 +1,7 @@
 static BENCHES_DIR: &str = "D:\\Programming\\crate-race\\benches";
 
 use std::collections::{HashMap, HashSet};
+use std::process::Command;
 
 ///Run benchmarks for func_benched.
 ///The path and everything for func_benched is configured in cargo.toml.
