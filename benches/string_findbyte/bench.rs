@@ -1,8 +1,8 @@
-///Search for just 1 byte inside of a byte array.
-///
-///* **Baseline**: Just one character string, length 1.
-///* **Big_Str_First**: 50kb string. Find character at the beginning of the string.
-///* **Big_Str_Last**: 50kb string. Find character at the end of the string.
+//!Search for just 1 byte inside of a byte array.
+//!
+//!* **Baseline**: Just one character string, length 1.
+//!* **Big_Str_First**: 50kb string. Find character at the beginning of the string.
+//!* **Big_Str_Last**: 50kb string. Find character at the end of the string.
 
 #[macro_use]
 extern crate bencher;
