@@ -1,15 +1,15 @@
-///Search for the position of a string inside of a string.
-///
-///* **Baseline**: Searching "abc123" inside of "1abc123"
-///* **Big_Pattern**: Search for a 50kb string inside of "1" + the 50kb string. Chars for this string were random.
-///* **Monotonous**: 50kb string of all 1s. Find "abc123" at the end.
-///* **Almost**: 50kb string repeating "abc12" without the ending "3". Find "abc123" at the end of the string.
-///
-///Note: Aho Corasick was just shoehorned into here out of curiosity of performance against other searches.
-///It does additional work which we expect will cause slower results: Searching for a set of strings against a set of strings. Its results provide both a "start" and "end" position of the match, along with which string it matched.
+//!Search for the position of a string inside of a string.
+//!
+//!* **Baseline**: Searching "abc123" inside of "1abc123"
+//!* **Big_Pattern**: Search for a 50kb string inside of "1" + the 50kb string. Chars for this string were random.
+//!* **Monotonous**: 50kb string of all 1s. Find "abc123" at the end.
+//!* **Almost**: 50kb string repeating "abc12" without the ending "3". Find "abc123" at the end of the string.
+//!
+//!Note: Aho Corasick was just shoehorned into here out of curiosity of performance against other searches.
+//!It does additional work which we expect will cause slower results: Searching for a set of strings against a set of strings. Its results provide both a "start" and "end" position of the match, along with which string it matched.
+
 #[macro_use]
 extern crate bencher;
-
 
 static BASELINE: &[u8] = b"abc123";
 static BASELINE1: &[u8] = b"1abc123";
