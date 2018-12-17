@@ -37,7 +37,7 @@ If an update is detected, Crate Race will rerun the benchmarks test and update g
 ### Only Shared functions
 Crate Race will not benchmark every single crate's unique functions.
 
-It will only benchmark functions that match other relatively popular crates' functions.
+It will only benchmark functions that match other crates' functions.
 
 If a crate has an extra function that other crates do not have, Crate Race will not benchmark it.
 
