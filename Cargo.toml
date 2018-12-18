@@ -41,7 +41,6 @@ memchr = "*"
 jetscii = "*"
 galil-seiferas = "*"
 twoway = "*"
-aho-corasick = "*"
 subslice = "*"
 
 [[bench]]
