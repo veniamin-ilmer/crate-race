@@ -5,6 +5,7 @@ authors = ["Veniamin Ilmer"]
 edition = "2018"
 
 [dependencies]
+#Used internally for benchmarking..
 bencher = "*"
 regex = "*"
 
@@ -42,6 +43,7 @@ jetscii = "*"
 galil-seiferas = "*"
 twoway = "*"
 subslice = "*"
+algos = "*"
 
 [[bench]]
 name = "bigint_arithmetic"
