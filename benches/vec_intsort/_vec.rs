@@ -42,7 +42,7 @@ pub fn baseline_big(b: &mut Bencher) {
   });
 }
 
-pub fn random_small(b: &mut Bencher) {
+pub fn random_big(b: &mut Bencher) {
   let answer_vec: Vec<u32> = (0..10_000).collect();
   b.iter(|| {
     let mut test_vec: Vec<u32> = (0..10_000).collect();
@@ -52,7 +52,7 @@ pub fn random_small(b: &mut Bencher) {
   });
 }
 
-pub fn reverse_small(b: &mut Bencher) {
+pub fn reverse_big(b: &mut Bencher) {
   let answer_vec: Vec<u32> = (0..10_000).collect();
   b.iter(|| {
     let mut test_vec: Vec<u32> = (0..10_000).rev().collect();
