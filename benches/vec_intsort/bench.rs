@@ -1,4 +1,4 @@
-//!Sorting Vecs of i64.
+//!Sorting Vecs of u32.
 //!
 //!* *Baseline_small*: 10 items. Fully sorted already.
 //!* *Random_small = 10 items. Completely random.
