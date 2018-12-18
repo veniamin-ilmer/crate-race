@@ -45,6 +45,9 @@ twoway = "*"
 subslice = "*"
 algos = "*"
 
+#vec sort
+rand = "*"  #Used to shuffle an array for benchmarking later
+
 [[bench]]
 name = "bigint_arithmetic"
 path = "benches/bigint_arithmetic/bench.rs"
