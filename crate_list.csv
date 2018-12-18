@@ -1,5 +1,4 @@
 cargo 1.31.0 (339d9f9c8 2018-11-16)
-aho_corasick,0.6.9,string_findsubstring
 cgmath,0.16.1,mathvector_dotproduct
 csv,1.0.5,csv_parse
 galil_seiferas,0.1.5,string_findsubstring
