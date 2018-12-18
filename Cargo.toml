@@ -14,14 +14,6 @@ num-traits = "*"  #Used by bigint code
 uint = "*"
 numext-fixed-uint = "*"
 
-#string find
-memchr = "*"
-jetscii = "*"
-galil-seiferas = "*"
-twoway = "*"
-aho-corasick = "*"
-subslice = "*"
-
 #csv
 csv = "*"
 quick-csv = "*"
@@ -33,9 +25,24 @@ serde_json = "*"
 json5 = "*"
 json_in_type = "*"
 
+#linear algebra
+nalgebra = "*"
+rulinalg = "*"
+ndarray = "*"
+cgmath = "*"
+vek = "*"
+
 #md5
 md5 = "*"
 md_5 = { version = "*", package = "md-5" }
+
+#string find
+memchr = "*"
+jetscii = "*"
+galil-seiferas = "*"
+twoway = "*"
+aho-corasick = "*"
+subslice = "*"
 
 [[bench]]
 name = "bigint_arithmetic"
@@ -60,6 +67,11 @@ harness = false
 [[bench]]
 name = "json_parse"
 path = "benches/json_parse/bench.rs"
+harness = false
+
+[[bench]]
+name = "mathvector_dotproduct"
+path = "benches/mathvector_dotproduct/bench.rs"
 harness = false
 
 [[bench]]

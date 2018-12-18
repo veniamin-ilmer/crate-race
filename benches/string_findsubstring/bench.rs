@@ -5,7 +5,7 @@
 //!* **Monotonous**: 50kb string of all 1s. Find "abc123" at the end.
 //!* **Almost**: 50kb string repeating "abc12" without the ending "3". Find "abc123" at the end of the string.
 //!
-//!Note: Aho Corasick was just shoehorned into here out of curiosity of performance against other searches.
+//!Note: `aho-corasick` was just shoehorned into here out of curiosity of performance against other searches.
 //!It does additional work which we expect will cause slower results: Searching for a set of strings against a set of strings. Its results provide both a "start" and "end" position of the match, along with which string it matched.
 
 #[macro_use]

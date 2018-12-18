@@ -1,6 +1,6 @@
 //!Multiplying numbers larger than what's possible with a normal 64 bit processor.
 //!
-//!* **Baseline**: Multiply 1 * 1
+//!* **Baseline**: Add 1 + 1
 //!* **Fact50**: Take the factorial of 50. (Gets up to 256 bits)
 //!* **Fact95**: Take the factorial of 95. (Gets up to 512 bits)
 //!
