@@ -1,6 +1,6 @@
 [package]
 name = "crate-race"
-version = "0.8.0"
+version = "0.9.0"
 authors = ["Veniamin Ilmer"]
 edition = "2018"
 
@@ -91,4 +91,9 @@ harness = false
 [[bench]]
 name = "string_findsubstring"
 path = "benches/string_findsubstring/bench.rs"
+harness = false
+
+[[bench]]
+name = "vec_intsort"
+path = "benches/vec_intsort/bench.rs"
 harness = false
