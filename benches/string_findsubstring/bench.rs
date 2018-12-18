@@ -24,12 +24,11 @@ static ALMOST: &[u8] = b"abc12abc12abc12abc12abc12abc12abc12abc12abc12abc12abc12
 mod _galil_seiferas;
 mod _jetscii;
 mod _twoway;
-mod _aho_corasick;
 mod _subslice;
 
-benchmark_group!(baseline, _galil_seiferas::baseline, _jetscii::baseline, _twoway::baseline, _aho_corasick::baseline, _subslice::baseline);
-benchmark_group!(big_pattern, _galil_seiferas::big_pattern, _jetscii::big_pattern, _twoway::big_pattern, _aho_corasick::big_pattern, _subslice::big_pattern);
-benchmark_group!(monotonous, _galil_seiferas::monotonous, _jetscii::monotonous, _twoway::monotonous, _aho_corasick::monotonous, _subslice::monotonous);
-benchmark_group!(almost, _galil_seiferas::almost, _jetscii::almost, _twoway::almost, _aho_corasick::almost, _subslice::almost);
+benchmark_group!(baseline, _galil_seiferas::baseline, _jetscii::baseline, _twoway::baseline, _subslice::baseline);
+benchmark_group!(big_pattern, _galil_seiferas::big_pattern, _jetscii::big_pattern, _twoway::big_pattern, _subslice::big_pattern);
+benchmark_group!(monotonous, _galil_seiferas::monotonous, _jetscii::monotonous, _twoway::monotonous, _subslice::monotonous);
+benchmark_group!(almost, _galil_seiferas::almost, _jetscii::almost, _twoway::almost, _subslice::almost);
 
 benchmark_main!(baseline, big_pattern, monotonous, almost);
