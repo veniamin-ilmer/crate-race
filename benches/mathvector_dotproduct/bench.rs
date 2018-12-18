@@ -12,6 +12,9 @@ extern crate bencher;
 #[macro_use]
 extern crate rulinalg;
 
+#[macro_use]
+extern crate ndarray;
+
 mod _nalgebra;
 mod _rulinalg;
 mod _ndarray;
