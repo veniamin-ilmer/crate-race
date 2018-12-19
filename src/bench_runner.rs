@@ -66,7 +66,10 @@ pub fn run_bench(func_benched: &str) -> bool {
     //Data
     for (crat, _) in &crats_sorted {
         let actual_crate = crat.split("::").next().unwrap(); //Strip off a module if it exists
-        write_data += &format!("| **[{}](https://crates.io/crates/{})** |", crat, actual_crate);
+        match *crat {
+            "std" => write_data += "| **std** |",
+            _ => write_data += &format!("| **[{}](https://crates.io/crates/{})** |", crat, actual_crate),
+        }
         for (func, _) in &funcs_sorted {
             if let Some(val) = map.get(&(crat, func)) {
                 if fastest_crat.get(func) == Some(crat) {
@@ -93,8 +96,13 @@ pub fn run_bench(func_benched: &str) -> bool {
     
     write_data += "\n## Crate versions\n\n";
     for (crat, _) in &crats_sorted {
-        let actual_crate = crat.split("::").next().unwrap(); //Strip off a module if it exists
-        write_data += &format!("    {}\n", get_crate_version_str(actual_crate));
+        match *crat {
+            "std" => (),
+            _ => {
+            let actual_crate = crat.split("::").next().unwrap(); //Strip off a module if it exists
+            write_data += &format!("    {}\n", get_crate_version_str(actual_crate));
+            },
+        }
     }
 
     write_data += &format!("\nCompiled on: `{}`", &get_cargo_version_str());
@@ -150,7 +158,7 @@ fn build_sorted_crate_vec<'c>(
         }
         crats_sorted.push((*crat, sum / count)); //Save the average
     }
-    crats_sorted.sort_by_key(|k| k.1);
+    crats_sorted.sort_unstable_by_key(|k| k.1);
     crats_sorted
 }
 
@@ -171,7 +179,7 @@ fn build_sorted_func_vec<'f>(
         }
         funcs_sorted.push((*func, sum / count)); //Save the average
     }
-    funcs_sorted.sort_by_key(|k| k.1);
+    funcs_sorted.sort_unstable_by_key(|k| k.1);
     funcs_sorted
 }
 

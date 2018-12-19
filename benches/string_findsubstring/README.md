@@ -8,11 +8,10 @@ Search for the position of a string inside of a string.
 
 | | baseline | monotonous | almost | big_pattern |
 | --- | --- | --- | --- | --- |
-| **[jetscii](https://crates.io/crates/jetscii)** | 0.019 | 7.967 | 38.504 | *2.24* |
-| **[subslice](https://crates.io/crates/subslice)** | 0.032 | *0.514* | 31.239 | 28.834 |
-| **[twoway](https://crates.io/crates/twoway)** | 0.024 | 4.841 | *28.046* | 101.424 |
-| **[galil_seiferas](https://crates.io/crates/galil_seiferas)** | *0.017* | 58.829 | 60.347 | 116.336 |
-| **[aho_corasick](https://crates.io/crates/aho_corasick)** | 2.107 | 2.713 | 249.827 | 5815.673 |
+| **[jetscii](https://crates.io/crates/jetscii)** | 0.021 | 9.971 | 38.055 | *2.298* |
+| **[subslice](https://crates.io/crates/subslice)** | 0.032 | *0.52* | 32.665 | 31.154 |
+| **[twoway](https://crates.io/crates/twoway)** | 0.025 | 4.838 | *27.698* | 102.841 |
+| **[galil_seiferas](https://crates.io/crates/galil_seiferas)** | *0.017* | 57.712 | 61.59 | 117.325 |
 
 Speed units are in microseconds per iteration. Less is better.
 
@@ -26,6 +25,5 @@ Speed units are in microseconds per iteration. Less is better.
     subslice = "0.2.0"          # Fast subslice search
     twoway = "0.2.0"        # Fast substring search for strings and byte strings. Optional SSE4.2 acceleration (if detected at runtim…
     galil-seiferas = "0.1.5"    # General string search in constant space, linear time, for nonorderable alphabets.
-    aho-corasick = "0.6.9"      # Fast multiple substring searching with finite state machines.
 
 Compiled on: `cargo 1.31.0 (339d9f9c8 2018-11-16)`
