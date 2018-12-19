@@ -1,7 +1,11 @@
 cargo 1.31.0 (339d9f9c8 2018-11-16)
+afsort,0.3.0,vec_intsort
 cgmath,0.16.1,mathvector_dotproduct
 csv,1.0.5,csv_parse
+cycle-sort,0.2.0,vec_intsort
+dmsort,1.0.0,vec_intsort
 galil_seiferas,0.1.5,string_findsubstring
+ironsort,0.1.0,vec_intsort
 jetscii,0.4.3,string_findbyte,string_findsubstring
 json,0.11.13,json_parse,json_build
 json5,0.2.2,json_parse
@@ -14,9 +18,13 @@ ndarray,0.12.1,mathvector_dotproduct
 num_bigint,0.2.2,bigint_arithmetic,bigint_parsestr
 numext-fixed-uint,0.1.2,bigint_arithmetic,bigint_parsestr
 rulinalg,0.4.2,mathvector_dotproduct
+rdxsort,0.3.0,vec_intsort
+rust_quicksort,0.1.0,vec_intsort
 quick-csv,0.1.6,csv_parse
+quick_sort,0.2.1,vec_intsort
 serde_json,1.0.33,json_parse,json_build
 simple_csv,0.0.15,csv_parse
+sort_rs,0.1.7,vec_intsort
 subslice,0.2.0,string_findsubstring
 twoway,0.2.0,string_findsubstring
 uint,0.5.0,bigint_arithmetic,bigint_parsestr

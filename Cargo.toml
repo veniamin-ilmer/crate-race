@@ -46,7 +46,14 @@ subslice = "*"
 
 #vec sort
 rand = "*"  #Used to shuffle an array for benchmarking later
-
+afsort = "*"
+cycle-sort = "*"
+dmsort = "*"
+ironsort = "*"
+quick_sort = "*"
+rdxsort = "*"
+rust_quicksort = "*"
+sortrs = "*"
 
 [[bench]]
 name = "bigint_arithmetic"

@@ -9,9 +9,9 @@ Note: We cannot include GMP or unstable crates. GMP can't be included because it
 
 | | baseline | fact50 | fact95 |
 | --- | --- | --- | --- |
-| **[num_bigint](https://crates.io/crates/num_bigint)** | 0.118 | *9.967* | *28.302* |
-| **[numext_fixed_uint](https://crates.io/crates/numext_fixed_uint)** | *0.008* | 70.449 | 424.15 |
-| **[uint](https://crates.io/crates/uint)** | 0.016 | 115.803 | 903.362 |
+| **[num_bigint](https://crates.io/crates/num_bigint)** | 0.116 | *10.276* | *28.313* |
+| **[numext_fixed_uint](https://crates.io/crates/numext_fixed_uint)** | *0.008* | 71.933 | 428.602 |
+| **[uint](https://crates.io/crates/uint)** | 0.016 | 115.143 | 902.621 |
 
 Speed units are in microseconds per iteration. Less is better.
 

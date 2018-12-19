@@ -6,9 +6,9 @@ Parsing large numbers from strings.
 
 | | baseline | big_num |
 | --- | --- | --- |
-| **[num_bigint](https://crates.io/crates/num_bigint)** | 0.258 | *1.268* |
-| **[numext_fixed_uint](https://crates.io/crates/numext_fixed_uint)** | 0.16 | 91.519 |
-| **[uint](https://crates.io/crates/uint)** | *0.156* | 920.83 |
+| **[num_bigint](https://crates.io/crates/num_bigint)** | 0.255 | *1.274* |
+| **[numext_fixed_uint](https://crates.io/crates/numext_fixed_uint)** | 0.159 | 91.418 |
+| **[uint](https://crates.io/crates/uint)** | *0.155* | 920.644 |
 
 Speed units are in microseconds per iteration. Less is better.
 

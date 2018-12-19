@@ -1,0 +1,4 @@
+   Compiling crate-race v0.9.0 (D:\Programming\crate-race)
+    Finished release [optimized] target(s) in 0.73s
+     Running target\release\deps\string_findsubstring-ce31f56a2169f938.exe
+^C
