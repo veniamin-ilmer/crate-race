@@ -45,3 +45,11 @@ If a crate has an extra function that other crates do not have, Crate Race will 
 Although Crate Race checks that the function returned a correct value expected for that function, it will not test the functions' edge cases being handled correctly.
 
 We are benchmarking, not QAing.
+
+## Contributing / Communication / Suggestions
+
+Have some code you want to add to the benchmark? Feel free to make pull request. Follow the [contributing guidelines](CONTRIBUTING.md).
+
+Don't have code, but have a suggestion of a crate or functionality you want tested?
+
+Write about it here: https://www.reddit.com/r/crate_race/ - I'll be judging what to add in based on how many votes it gets.
