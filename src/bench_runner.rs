@@ -65,7 +65,7 @@ pub fn run_bench(func_benched: &str) -> bool {
 
     //Data
     for (crat, _) in &crats_sorted {
-        let actual_crate = crat.split("::").next(); //Strip off a module if it exists
+        let actual_crate = crat.split("::").next().unwrap(); //Strip off a module if it exists
         write_data += &format!("| **[{}](https://crates.io/crates/{})** |", crat, actual_crate);
         for (func, _) in &funcs_sorted {
             if let Some(val) = map.get(&(crat, func)) {
@@ -93,7 +93,7 @@ pub fn run_bench(func_benched: &str) -> bool {
     
     write_data += "\n## Crate versions\n\n";
     for (crat, _) in &crats_sorted {
-        let actual_crate = crat.split("::").next(); //Strip off a module if it exists
+        let actual_crate = crat.split("::").next().unwrap(); //Strip off a module if it exists
         write_data += &format!("    {}\n", get_crate_version_str(actual_crate));
     }
 

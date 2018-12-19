@@ -22,11 +22,10 @@ mod _galil_seiferas;
 mod _jetscii;
 mod _twoway;
 mod _subslice;
-mod _algos;
 
-benchmark_group!(baseline, _galil_seiferas::baseline, _jetscii::baseline, _twoway::baseline, _subslice::baseline, _algos::bruteforce::baseline, _algos::boyer_moore::baseline, _algos::horspool::baseline, _algos::karp_rabin::baseline);
-benchmark_group!(big_pattern, _galil_seiferas::big_pattern, _jetscii::big_pattern, _twoway::big_pattern, _subslice::big_pattern, _algos::bruteforce::big_pattern, _algos::boyer_moore::big_pattern, _algos::horspool::big_pattern, _algos::karp_rabin::big_pattern);
-benchmark_group!(monotonous, _galil_seiferas::monotonous, _jetscii::monotonous, _twoway::monotonous, _subslice::monotonous, _algos::bruteforce::monotonous, _algos::boyer_moore::monotonous, _algos::horspool::monotonous, _algos::karp_rabin::monotonous);
-benchmark_group!(almost, _galil_seiferas::almost, _jetscii::almost, _twoway::almost, _subslice::almost, _algos::bruteforce::almost, _algos::boyer_moore::almost, _algos::horspool::almost, _algos::karp_rabin::almost);
+benchmark_group!(baseline, _galil_seiferas::baseline, _jetscii::baseline, _twoway::baseline, _subslice::baseline);
+benchmark_group!(big_pattern, _galil_seiferas::big_pattern, _jetscii::big_pattern, _twoway::big_pattern, _subslice::big_pattern);
+benchmark_group!(monotonous, _galil_seiferas::monotonous, _jetscii::monotonous, _twoway::monotonous, _subslice::monotonous);
+benchmark_group!(almost, _galil_seiferas::almost, _jetscii::almost, _twoway::almost, _subslice::almost);
 
 benchmark_main!(baseline, big_pattern, monotonous, almost);

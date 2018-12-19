@@ -43,11 +43,10 @@ jetscii = "*"
 galil-seiferas = "*"
 twoway = "*"
 subslice = "*"
-algos = "*"
 
 #vec sort
 rand = "*"  #Used to shuffle an array for benchmarking later
-sort = "*"
+
 
 [[bench]]
 name = "bigint_arithmetic"
