@@ -1,11 +1,13 @@
 cargo 1.31.0 (339d9f9c8 2018-11-16)
 afsort,0.3.0,vec_intsort
+alphanumeric,0,vec_alphanumericsort
 cgmath,0.16.1,mathvector_dotproduct
 csv,1.0.5,csv_parse
 cycle-sort,0.2.0,vec_intsort
 dmsort,1.0.0,vec_intsort
 dummy_xml,0.1.6,xml_parse
 galil_seiferas,0.1.5,string_findsubstring
+humanesort,0,vec_alphanumericsort
 ironsort,0.1.0,vec_intsort
 jetscii,0.4.3,string_findbyte,string_findsubstring
 json,0.11.13,json_parse,json_build
