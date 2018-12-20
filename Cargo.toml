@@ -61,6 +61,7 @@ quick-xml = "*"
 roxmltree = "*"
 xmltree = "*"
 treexml = "*"
+nv_xml = "*"
 
 [[bench]]
 name = "bigint_arithmetic"
