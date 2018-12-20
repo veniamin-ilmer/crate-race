@@ -46,6 +46,15 @@ Although Crate Race checks that the function returned a correct value expected f
 
 We are benchmarking, not QAing.
 
+### Benchmark code isn't idiomatic
+Benchmark code is meant to be as short and quick to write as possible.
+
+The input and outputs are the same all the time.
+
+If they ever change, the code is meant to panic. The panic will be caught by crate-race.
+
+As a result, it is completely fine to do `unwrap`() everywhere without any further checking.
+
 ## Contributing / Communication / Suggestions
 
 Have some code you want to add to the benchmark? Feel free to make pull request. Follow the [contributing guidelines](CONTRIBUTING.md).
