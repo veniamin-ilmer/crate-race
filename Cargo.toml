@@ -44,7 +44,11 @@ galil-seiferas = "*"
 twoway = "*"
 subslice = "*"
 
-#vec sort
+#vec sort alphanumeric
+alphanumeric = "*"
+humanesort = "*"
+
+#vec sort int
 rand = "*"  #Used to shuffle an array for benchmarking later
 afsort = "*"
 cycle-sort = "*"
