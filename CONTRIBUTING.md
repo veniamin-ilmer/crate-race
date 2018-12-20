@@ -51,3 +51,8 @@ In the terminal, type in:
 Crate-Race will detect changes based on crate versions differing from what's in `crate_list.csv`
 
 In step #4 above, you set the version to 0, so that will force crate-race into looking at your crate.
+
+## Discussion / Suggestions
+Go here for any issues / discussions / suggestions:
+
+https://www.reddit.com/r/crate_race/
