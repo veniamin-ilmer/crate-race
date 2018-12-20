@@ -33,7 +33,7 @@ In the terminal, type in:
 
     cargo bench --bench [bench_name]
 
-Bench name is the name 
+Bench name is the name of the folder where you saved the file.
 
 ## Making crate-race pick up your new crate
 
