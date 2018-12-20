@@ -1,4 +1,4 @@
-## Contributing
+# Contributing
 Crate Race will only benchmark crates that share functionality with other crates.
 
 If you have such shared crate functions, please feel free to add in a Pull Request with the extra crate.
