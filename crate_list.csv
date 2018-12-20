@@ -18,6 +18,7 @@ nalgebra,0.16.12,mathvector_dotproduct
 ndarray,0.12.1,mathvector_dotproduct
 num_bigint,0.2.2,bigint_arithmetic,bigint_parsestr
 numext-fixed-uint,0.1.2,bigint_arithmetic,bigint_parsestr
+nv_xml,0,xml_parse
 rdxsort,0.3.0,vec_intsort
 roxmlparse,0,xml_parse
 rulinalg,0.4.2,mathvector_dotproduct
