@@ -58,6 +58,7 @@ sortrs = "*"
 #xml
 dummy_xml = "*"
 quick-xml = "*"
+roxmltree = "*"
 
 [[bench]]
 name = "bigint_arithmetic"
