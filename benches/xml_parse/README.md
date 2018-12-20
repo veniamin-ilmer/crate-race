@@ -6,10 +6,10 @@ Parsing XML, and retrieving specific text or attribute.
 * **Serial**: 1000 tags, opening and closing, opening and closing. No nesting.
 * **Nested**: 1000 nested entries, each inside of the other.
 
-| | baseline | serial | nested | attribute |
+| | baseline | nested | serial | attribute |
 | --- | --- | --- | --- | --- |
-| **[dummy_xml](https://crates.io/crates/dummy_xml)** | *0.239* | - | 143.274 | *194.841* |
-| **[quick_xml](https://crates.io/crates/quick_xml)** | 0.324 | *90.701* | *51.064* | 2932.532 |
+| **[dummy_xml](https://crates.io/crates/dummy_xml)** | *0.241* | 142.598 | 138.612 | *191.738* |
+| **[quick_xml](https://crates.io/crates/quick_xml)** | 0.325 | *51.874* | *92.195* | 3014.572 |
 
 Speed units are in microseconds per iteration. Less is better.
 
