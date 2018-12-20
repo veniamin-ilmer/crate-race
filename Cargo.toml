@@ -55,6 +55,10 @@ rdxsort = "*"
 rust_quicksort = "*"
 sortrs = "*"
 
+#xml
+dummy_xml = "*"
+quick-xml = "*"
+
 [[bench]]
 name = "bigint_arithmetic"
 path = "benches/bigint_arithmetic/bench.rs"
@@ -103,4 +107,9 @@ harness = false
 [[bench]]
 name = "vec_intsort"
 path = "benches/vec_intsort/bench.rs"
+harness = false
+
+[[bench]]
+name = "xml_parse"
+path = "benches/xml_parse/bench.rs"
 harness = false

@@ -4,6 +4,7 @@ cgmath,0.16.1,mathvector_dotproduct
 csv,1.0.5,csv_parse
 cycle-sort,0.2.0,vec_intsort
 dmsort,1.0.0,vec_intsort
+dummy_xml,0.1.6,xml_parse
 galil_seiferas,0.1.5,string_findsubstring
 ironsort,0.1.0,vec_intsort
 jetscii,0.4.3,string_findbyte,string_findsubstring
@@ -22,6 +23,7 @@ rdxsort,0.3.0,vec_intsort
 rust_quicksort,0.1.0,vec_intsort
 quick-csv,0.1.6,csv_parse
 quick_sort,0.2.1,vec_intsort
+quick_xml,0.13.1,xml_parse
 serde_json,1.0.33,json_parse,json_build
 simple_csv,0.0.15,csv_parse
 sort_rs,0.1.7,vec_intsort
