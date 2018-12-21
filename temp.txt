@@ -1,4 +1,0 @@
-   Compiling crate-race v0.9.0 (D:\Programming\crate-race)
-    Finished release [optimized] target(s) in 1.08s
-     Running target\release\deps\xml_parse-8dc18437fa71e782.exe
-^C
