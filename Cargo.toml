@@ -42,11 +42,12 @@ md5 = "*"
 md_5 = { version = "*", package = "md-5" }
 
 #string find
-memchr = "*"
-jetscii = "*"
 galil-seiferas = "*"
-twoway = "*"
+jetscii = "*"
+memchr = "*"
+needle = "*"
 subslice = "*"
+twoway = "*"
 
 #vec sort int
 rand = "*"  #Used to shuffle an array for benchmarking later
