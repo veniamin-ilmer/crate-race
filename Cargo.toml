@@ -6,6 +6,7 @@ edition = "2018"
 license = "Apache License Version 2.0"
 description = "Comparing Rust crate function speeds"
 readme = "Readme.md"
+repository = "https://github.com/veniamin-ilmer/crate-race"
 
 [dependencies]
 #Used internally for benchmarking..
