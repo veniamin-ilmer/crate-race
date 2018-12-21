@@ -44,10 +44,6 @@ galil-seiferas = "*"
 twoway = "*"
 subslice = "*"
 
-#vec sort alphanumeric
-alphanumeric = "*"
-humanesort = "*"
-
 #vec sort int
 rand = "*"  #Used to shuffle an array for benchmarking later
 afsort = "*"
@@ -65,7 +61,7 @@ quick-xml = "*"
 roxmltree = "*"
 xmltree = "*"
 treexml = "*"
-nv_xml = "*"
+nv-xml = "*"
 
 [[bench]]
 name = "bigint_arithmetic"

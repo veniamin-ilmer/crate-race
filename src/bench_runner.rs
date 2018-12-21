@@ -236,13 +236,13 @@ pub fn get_crate_version_str(crat: &str) -> String {
         .arg("search")
         .arg(crat)
         .output()
-        .expect("Failed to run cargo search")
+        .expect(&format!("Failed to run cargo search for {}", crat))
         .stdout;
     String::from_utf8(output)
-        .expect("Failed to get output from cargo search")
+        .expect(&format!("Failed to get output from cargo search for {}", crat))
         .lines()
         .next()
-        .expect("Failed to read the first line of cargo search")
+        .expect(&format!("Failed to read the first line of cargo search for {}", crat))
         .to_string()
 }
 

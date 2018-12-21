@@ -1,4 +1,4 @@
-#![recursion_limit="128"]
+#![recursion_limit="256"]
 //Fix Recursion limitation
 
 //!Parsing XML, and retrieving specific text or attribute.
@@ -21,10 +21,13 @@ static NESTED: &str = r#"<tag1><tag2><tag3><tag4><tag5><tag6><tag7><tag8><tag9><
 
 mod _quick_xml;
 mod _dummy_xml;
+mod _roxmltree;
+mod _treexml;
+mod _xmltree;
 
-benchmark_group!(baseline, _quick_xml::baseline, _dummy_xml::baseline);
-benchmark_group!(attribute, _quick_xml::attribute, _dummy_xml::attribute);
-benchmark_group!(serial, _quick_xml::serial, _dummy_xml::serial);
-benchmark_group!(nested, _quick_xml::nested, _dummy_xml::nested);
+benchmark_group!(baseline, _quick_xml::baseline, _dummy_xml::baseline, _roxmltree::baseline, _treexml::baseline, _xmltree::baseline);
+benchmark_group!(attribute, _quick_xml::attribute, _dummy_xml::attribute, _roxmltree::attribute, _treexml::attribute, _xmltree::attribute);
+benchmark_group!(serial, _quick_xml::serial, _dummy_xml::serial, _roxmltree::serial, _treexml::serial, _xmltree::serial);
+benchmark_group!(nested, _quick_xml::nested, _dummy_xml::nested, _roxmltree::nested, _treexml::nested);
 
 benchmark_main!(baseline, attribute, serial, nested);
