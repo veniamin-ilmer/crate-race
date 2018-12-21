@@ -33,20 +33,20 @@ fn main() {
     let mut write_data = String::new();
 
     println!("Checking if any Crates changed..");
-    let mut new_cargo_version = false;
+    let mut new_rust_version = false;
     let mut first = true;
     for line in f.lines() {
         let line = line.expect("Unable to read line from crate_list.csv");
         if first {
-            //Cargo version
+            //Rust version
             first = false;
-            let new_version_str = bench_runner::get_cargo_version_str();
+            let new_version_str = bench_runner::get_rust_version_str();
             if line != new_version_str {
-                new_cargo_version = true;
-                println!("There is a new cargo version!\nBefore:{}\nAfter: {}\nRerunning all benchmarks with new cargo version...", line, new_version_str);
+                new_rust_version = true;
+                println!("There is a new rust version!\nBefore:{}\nAfter: {}\nRerunning all benchmarks with new rust version...", line, new_version_str);
             }
             write_data += &format!("{}\n", new_version_str);
-            continue; //Don't treat this cargo line like a benchmark
+            continue; //Don't treat this rust line like a benchmark
         }
         let mut line_vals = line.split(",");
         if let Some(crat) = line_vals.next() {
@@ -58,7 +58,7 @@ fn main() {
                 let new_version = crate_version_split
                     .next()
                     .expect(&format!("Crate {} version unavailable!!", crat)); //Get version
-                if new_version != old_version || new_cargo_version {
+                if new_version != old_version || new_rust_version {
                     //New version available! Rerun benchmarks for all benches for this crate!
                     println!(
                         "{} crate updating from {} to {}...",

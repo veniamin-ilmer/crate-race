@@ -7,9 +7,9 @@ Parsing CSVs, and retrieving values at specific rows/columns.
 
 | | baseline | headers | rows |
 | --- | --- | --- | --- |
-| **[quick_csv](https://crates.io/crates/quick_csv)** | *0.405* | - | *90.611* |
-| **[csv](https://crates.io/crates/csv)** | 15.363 | *37.9* | 157.61 |
-| **[simple_csv](https://crates.io/crates/simple_csv)** | 0.415 | 137.242 | 170.633 |
+| **[quick_csv](https://crates.io/crates/quick_csv)** | *0.406* | - | *96.167* |
+| **[csv](https://crates.io/crates/csv)** | 15.376 | *37.39* | 155.775 |
+| **[simple_csv](https://crates.io/crates/simple_csv)** | 0.409 | 139.742 | 169.986 |
 
 Speed units are in microseconds per iteration. Less is better.
 
@@ -19,4 +19,4 @@ Speed units are in microseconds per iteration. Less is better.
     csv = "1.0.5"              # Fast CSV parsing with support for serde.
     simple_csv = "0.0.15"             # A simple CSV parsing implementation
 
-Compiled on: `cargo 1.31.0 (339d9f9c8 2018-11-16)`
+Compiled on: `rustc 1.31.1 (b6c32da9b 2018-12-18)`

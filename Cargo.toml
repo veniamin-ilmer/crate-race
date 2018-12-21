@@ -41,11 +41,16 @@ vek = "*"
 md5 = "*"
 md_5 = { version = "*", package = "md-5" }
 
+#random
+rand_isaac = "*"
+rand_xorshift = "*"
+rand_hc = "*"
+rand_pcg = "*"
+
 #string find
 galil-seiferas = "*"
 jetscii = "*"
 memchr = "*"
-needle = "*"
 subslice = "*"
 twoway = "*"
 

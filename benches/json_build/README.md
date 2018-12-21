@@ -7,9 +7,9 @@ Building JSON strings using objects.
 
 | | baseline | serial | nested |
 | --- | --- | --- | --- |
-| **[json_in_type](https://crates.io/crates/json_in_type)** | *0.081* | *1.508* | *1.361* |
-| **[json](https://crates.io/crates/json)** | 0.124 | 6.638 | 8.33 |
-| **[serde_json](https://crates.io/crates/serde_json)** | 0.634 | - | 31.456 |
+| **[json_in_type](https://crates.io/crates/json_in_type)** | *0.083* | *1.775* | *1.368* |
+| **[json](https://crates.io/crates/json)** | 0.128 | 6.478 | 8.269 |
+| **[serde_json](https://crates.io/crates/serde_json)** | 0.724 | - | 31.598 |
 
 Speed units are in microseconds per iteration. Less is better.
 
@@ -23,4 +23,4 @@ Speed units are in microseconds per iteration. Less is better.
     json = "0.11.13"                          # JSON implementation in Rust
     serde_json = "1.0.33"                      # A JSON serialization file format
 
-Compiled on: `cargo 1.31.0 (339d9f9c8 2018-11-16)`
+Compiled on: `rustc 1.31.1 (b6c32da9b 2018-12-18)`

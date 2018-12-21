@@ -6,9 +6,9 @@ Parsing large numbers from strings.
 
 | | baseline | big_num |
 | --- | --- | --- |
-| **[num_bigint](https://crates.io/crates/num_bigint)** | 0.255 | *1.274* |
-| **[numext_fixed_uint](https://crates.io/crates/numext_fixed_uint)** | 0.159 | 91.418 |
-| **[uint](https://crates.io/crates/uint)** | *0.155* | 920.644 |
+| **[num_bigint](https://crates.io/crates/num_bigint)** | 0.284 | *1.266* |
+| **[numext_fixed_uint](https://crates.io/crates/numext_fixed_uint)** | *0.148* | 99.761 |
+| **[uint](https://crates.io/crates/uint)** | 0.154 | 957.266 |
 
 Speed units are in microseconds per iteration. Less is better.
 
@@ -22,4 +22,4 @@ Speed units are in microseconds per iteration. Less is better.
     numext-fixed-uint = "0.1.2"     # Fixed-size uint types.
     uint = "0.5.0"                     # Large fixed-size integers arithmetics
 
-Compiled on: `cargo 1.31.0 (339d9f9c8 2018-11-16)`
+Compiled on: `rustc 1.31.1 (b6c32da9b 2018-12-18)`

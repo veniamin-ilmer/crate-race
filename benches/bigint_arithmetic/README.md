@@ -9,9 +9,9 @@ Note: We cannot include GMP or unstable crates. GMP can't be included because it
 
 | | baseline | fact50 | fact95 |
 | --- | --- | --- | --- |
-| **[num_bigint](https://crates.io/crates/num_bigint)** | 0.116 | *10.276* | *28.313* |
-| **[numext_fixed_uint](https://crates.io/crates/numext_fixed_uint)** | *0.008* | 71.933 | 428.602 |
-| **[uint](https://crates.io/crates/uint)** | 0.016 | 115.143 | 902.621 |
+| **[num_bigint](https://crates.io/crates/num_bigint)** | 0.13 | *10.131* | *28.544* |
+| **[numext_fixed_uint](https://crates.io/crates/numext_fixed_uint)** | *0.009* | 74.353 | 426.554 |
+| **[uint](https://crates.io/crates/uint)** | 0.016 | 125.211 | 1031.125 |
 
 Speed units are in microseconds per iteration. Less is better.
 
@@ -25,4 +25,4 @@ Speed units are in microseconds per iteration. Less is better.
     numext-fixed-uint = "0.1.2"     # Fixed-size uint types.
     uint = "0.5.0"                     # Large fixed-size integers arithmetics
 
-Compiled on: `cargo 1.31.0 (339d9f9c8 2018-11-16)`
+Compiled on: `rustc 1.31.1 (b6c32da9b 2018-12-18)`

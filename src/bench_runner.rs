@@ -105,7 +105,7 @@ pub fn run_bench(func_benched: &str) -> bool {
         }
     }
 
-    write_data += &format!("\nCompiled on: `{}`", &get_cargo_version_str());
+    write_data += &format!("\nCompiled on: `{}`", &get_rust_version_str());
     
     fs::write(
         format!("{}\\{}\\README.md", BENCHES_DIR, func_benched),
@@ -246,9 +246,9 @@ pub fn get_crate_version_str(crat: &str) -> String {
         .to_string()
 }
 
-pub fn get_cargo_version_str() -> String {
-    let output = Command::new("cargo")
-        .arg("version")
+pub fn get_rust_version_str() -> String {
+    let output = Command::new("rustc")
+        .arg("-V")
         .output()
         .expect("Failed to run cargo version")
         .stdout;

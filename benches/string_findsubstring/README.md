@@ -8,10 +8,10 @@ Search for the position of a string inside of a string.
 
 | | baseline | monotonous | almost | big_pattern |
 | --- | --- | --- | --- | --- |
-| **[jetscii](https://crates.io/crates/jetscii)** | 0.021 | 9.971 | 38.055 | *2.298* |
-| **[subslice](https://crates.io/crates/subslice)** | 0.032 | *0.52* | 32.665 | 31.154 |
-| **[twoway](https://crates.io/crates/twoway)** | 0.025 | 4.838 | *27.698* | 102.841 |
-| **[galil_seiferas](https://crates.io/crates/galil_seiferas)** | *0.017* | 57.712 | 61.59 | 117.325 |
+| **[jetscii](https://crates.io/crates/jetscii)** | 0.021 | 9.979 | 38.638 | *2.422* |
+| **[subslice](https://crates.io/crates/subslice)** | 0.032 | *0.568* | 31.214 | 30.351 |
+| **[twoway](https://crates.io/crates/twoway)** | 0.026 | 5.283 | *30.016* | 108.622 |
+| **[galil_seiferas](https://crates.io/crates/galil_seiferas)** | *0.017* | 62.283 | 62.251 | 117.335 |
 
 Speed units are in microseconds per iteration. Less is better.
 
@@ -26,4 +26,4 @@ Speed units are in microseconds per iteration. Less is better.
     twoway = "0.2.0"        # Fast substring search for strings and byte strings. Optional SSE4.2 acceleration (if detected at runtim…
     galil-seiferas = "0.1.5"    # General string search in constant space, linear time, for nonorderable alphabets.
 
-Compiled on: `cargo 1.31.0 (339d9f9c8 2018-11-16)`
+Compiled on: `rustc 1.31.1 (b6c32da9b 2018-12-18)`

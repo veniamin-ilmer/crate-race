@@ -11,9 +11,9 @@ Note - `cgmath` and `vek` doesn't allow to do more than 4 dimensions.
 | --- | --- | --- | --- |
 | **[cgmath](https://crates.io/crates/cgmath)** | *0* | - | - |
 | **[vek](https://crates.io/crates/vek)** | 0 | - | - |
-| **[rulinalg](https://crates.io/crates/rulinalg)** | 0.067 | *0.117* | 0.647 |
-| **[ndarray](https://crates.io/crates/ndarray)** | 0.073 | 0.13 | *0.642* |
-| **[nalgebra](https://crates.io/crates/nalgebra)** | 0.009 | 0.201 | 1.132 |
+| **[rulinalg](https://crates.io/crates/rulinalg)** | 0.067 | *0.119* | 0.609 |
+| **[ndarray](https://crates.io/crates/ndarray)** | 0.073 | 0.125 | *0.607* |
+| **[nalgebra](https://crates.io/crates/nalgebra)** | 0.009 | 0.194 | 1.138 |
 
 Speed units are in microseconds per iteration. Less is better.
 
@@ -25,4 +25,4 @@ Speed units are in microseconds per iteration. Less is better.
     ndarray = "0.12.1"            # An n-dimensional array for general elements and for numerics. Lightweight array views and slicing…
     nalgebra = "0.16.12"           # Linear algebra library with transformations and statically-sized or dynamically-sized matrices.
 
-Compiled on: `cargo 1.31.0 (339d9f9c8 2018-11-16)`
+Compiled on: `rustc 1.31.1 (b6c32da9b 2018-12-18)`

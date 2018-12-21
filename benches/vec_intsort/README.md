@@ -8,15 +8,15 @@ Sorting Vecs of u32.
 
 | | baseline | sorted | random | reverse |
 | --- | --- | --- | --- | --- |
-| **std** | 0.036 | *6.225* | 215.622 | *8.92* |
-| **[dmsort](https://crates.io/crates/dmsort)** | 0.036 | 49.684 | 239.175 | 22.758 |
-| **[rdxsort](https://crates.io/crates/rdxsort)** | 1.481 | 193.324 | *163.289* | 193.077 |
-| **[sortrs](https://crates.io/crates/sortrs)** | 0.037 | 76.794 | 433.34 | 71.508 |
-| **[afsort](https://crates.io/crates/afsort)** | 0.039 | 185.665 | 268.71 | 211.819 |
-| **[ironsort](https://crates.io/crates/ironsort)** | *0.035* | 72.968 | 527.78 | 85.518 |
-| **[rust_quicksort](https://crates.io/crates/rust_quicksort)** | 0.038 | 93.335 | 548.788 | 2888.365 |
-| **[quick_sort](https://crates.io/crates/quick_sort)** | 0.035 | 106.422 | 493.34 | 23203.443 |
-| **[cycle_sort](https://crates.io/crates/cycle_sort)** | 0.036 | 14161.158 | 42360.43 | 24763.832 |
+| **std** | 0.037 | *6.098* | 215.711 | *9.245* |
+| **[dmsort](https://crates.io/crates/dmsort)** | 0.037 | 50.397 | 239.457 | 23.197 |
+| **[rdxsort](https://crates.io/crates/rdxsort)** | 1.533 | 204.462 | *169.008* | 199.266 |
+| **[sortrs](https://crates.io/crates/sortrs)** | *0.036* | 78.146 | 429.932 | 72.866 |
+| **[afsort](https://crates.io/crates/afsort)** | 0.04 | 186.268 | 272.734 | 212.396 |
+| **[ironsort](https://crates.io/crates/ironsort)** | 0.036 | 73.408 | 521.591 | 87.882 |
+| **[rust_quicksort](https://crates.io/crates/rust_quicksort)** | 0.037 | 92.64 | 548.581 | 2810.284 |
+| **[quick_sort](https://crates.io/crates/quick_sort)** | 0.036 | 111.435 | 488.882 | 23429.313 |
+| **[cycle_sort](https://crates.io/crates/cycle_sort)** | 0.036 | 14124.811 | 42719.34 | 24907.951 |
 
 Speed units are in microseconds per iteration. Less is better.
 
@@ -31,4 +31,4 @@ Speed units are in microseconds per iteration. Less is better.
     quick_sort = "0.2.1"          # In place quick sort
     cycle-sort = "0.2.0"           # Simple generic Cycle sort implementation
 
-Compiled on: `cargo 1.31.0 (339d9f9c8 2018-11-16)`
+Compiled on: `rustc 1.31.1 (b6c32da9b 2018-12-18)`
