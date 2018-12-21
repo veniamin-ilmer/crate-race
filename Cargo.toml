@@ -1,8 +1,11 @@
 [package]
 name = "crate-race"
-version = "0.9.0"
+version = "1.0.0"
 authors = ["Veniamin Ilmer"]
 edition = "2018"
+license = "Apache License Version 2.0"
+description = "Comparing Rust crate function speeds"
+readme = "Readme.md"
 
 [dependencies]
 #Used internally for benchmarking..
