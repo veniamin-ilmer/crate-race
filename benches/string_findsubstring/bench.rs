@@ -22,10 +22,11 @@ mod _galil_seiferas;
 mod _jetscii;
 mod _twoway;
 mod _subslice;
+mod _needle;
 
-benchmark_group!(baseline, _galil_seiferas::baseline, _jetscii::baseline, _twoway::baseline, _subslice::baseline);
-benchmark_group!(big_pattern, _galil_seiferas::big_pattern, _jetscii::big_pattern, _twoway::big_pattern, _subslice::big_pattern);
-benchmark_group!(monotonous, _galil_seiferas::monotonous, _jetscii::monotonous, _twoway::monotonous, _subslice::monotonous);
-benchmark_group!(almost, _galil_seiferas::almost, _jetscii::almost, _twoway::almost, _subslice::almost);
+benchmark_group!(baseline, _galil_seiferas::baseline, _jetscii::baseline, _twoway::baseline, _subslice::baseline; _needle::baseline);
+benchmark_group!(big_pattern, _galil_seiferas::big_pattern, _jetscii::big_pattern, _twoway::big_pattern, _subslice::big_pattern, _needle::big_pattern);
+benchmark_group!(monotonous, _galil_seiferas::monotonous, _jetscii::monotonous, _twoway::monotonous, _subslice::monotonous, _needle::monotonous);
+benchmark_group!(almost, _galil_seiferas::almost, _jetscii::almost, _twoway::almost, _subslice::almost, _needle::almost);
 
 benchmark_main!(baseline, big_pattern, monotonous, almost);
