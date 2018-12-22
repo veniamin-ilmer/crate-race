@@ -6,17 +6,17 @@ Sorting Vecs of u32.
 * *Random*: 10,000 items, randomly shuffled. (The shuffling is not part of the time).
 * *Reverse*: 10,000 items, sorted in reverse order.
 
-| | baseline | sorted | random | reverse |
+| | baseline | sorted | reverse | random |
 | --- | --- | --- | --- | --- |
-| **std** | 0.037 | *6.098* | 215.711 | *9.245* |
-| **[dmsort](https://crates.io/crates/dmsort)** | 0.037 | 50.397 | 239.457 | 23.197 |
-| **[rdxsort](https://crates.io/crates/rdxsort)** | 1.533 | 204.462 | *169.008* | 199.266 |
-| **[sortrs](https://crates.io/crates/sortrs)** | *0.036* | 78.146 | 429.932 | 72.866 |
-| **[afsort](https://crates.io/crates/afsort)** | 0.04 | 186.268 | 272.734 | 212.396 |
-| **[ironsort](https://crates.io/crates/ironsort)** | 0.036 | 73.408 | 521.591 | 87.882 |
-| **[rust_quicksort](https://crates.io/crates/rust_quicksort)** | 0.037 | 92.64 | 548.581 | 2810.284 |
-| **[quick_sort](https://crates.io/crates/quick_sort)** | 0.036 | 111.435 | 488.882 | 23429.313 |
-| **[cycle_sort](https://crates.io/crates/cycle_sort)** | 0.036 | 14124.811 | 42719.34 | 24907.951 |
+| **std** | 0.037 | *6.265* | *8.871* | 215.558 |
+| **[dmsort](https://crates.io/crates/dmsort)** | 0.036 | 50.285 | 22.778 | 239.727 |
+| **[rdxsort](https://crates.io/crates/rdxsort)** | 1.466 | 201.081 | 201.035 | *164.252* |
+| **[sortrs](https://crates.io/crates/sortrs)** | 0.036 | 76.295 | 74.888 | 430.266 |
+| **[afsort](https://crates.io/crates/afsort)** | 0.039 | 182.98 | 210.82 | 269.263 |
+| **[ironsort](https://crates.io/crates/ironsort)** | 0.036 | 80.296 | 94.191 | 515.411 |
+| **[rust_quicksort](https://crates.io/crates/rust_quicksort)** | 0.037 | 94.138 | 2802.348 | 545.802 |
+| **[quick_sort](https://crates.io/crates/quick_sort)** | *0.035* | 111.094 | 22827.508 | 503.4 |
+| **[cycle_sort](https://crates.io/crates/cycle_sort)** | 0.036 | 14120.508 | 33609.664 | 66057.58 |
 
 Speed units are in microseconds per iteration. Less is better.
 

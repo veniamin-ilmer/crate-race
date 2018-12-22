@@ -7,8 +7,8 @@ Search for just 1 byte inside of a byte array.
 
 | | big_str_first | baseline | big_str_last |
 | --- | --- | --- | --- |
-| **[memchr](https://crates.io/crates/memchr)** | *0.004* | *0.003* | *0.541* |
-| **[jetscii](https://crates.io/crates/jetscii)** | 0.016 | 0.018 | 13.478 |
+| **[memchr](https://crates.io/crates/memchr)** | *0.002* | *0.003* | *0.48* |
+| **[jetscii](https://crates.io/crates/jetscii)** | 0.016 | 0.017 | 12.204 |
 
 Speed units are in microseconds per iteration. Less is better.
 

@@ -7,9 +7,9 @@ Building JSON strings using objects.
 
 | | baseline | serial | nested |
 | --- | --- | --- | --- |
-| **[json_in_type](https://crates.io/crates/json_in_type)** | *0.083* | *1.775* | *1.368* |
-| **[json](https://crates.io/crates/json)** | 0.128 | 6.478 | 8.269 |
-| **[serde_json](https://crates.io/crates/serde_json)** | 0.724 | - | 31.598 |
+| **[json_in_type](https://crates.io/crates/json_in_type)** | *0.081* | *1.556* | *1.329* |
+| **[json](https://crates.io/crates/json)** | 0.121 | 6.552 | 8.23 |
+| **[serde_json](https://crates.io/crates/serde_json)** | 0.621 | - | 31.04 |
 
 Speed units are in microseconds per iteration. Less is better.
 

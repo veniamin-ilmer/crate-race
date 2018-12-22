@@ -8,11 +8,11 @@ Parsing XML, and retrieving specific text or attribute.
 
 | | baseline | serial | attribute | nested |
 | --- | --- | --- | --- | --- |
-| **[dummy_xml](https://crates.io/crates/dummy_xml)** | *0.257* | 143.18 | *192.331* | 143.081 |
-| **[quick_xml](https://crates.io/crates/quick_xml)** | 0.321 | *98.741* | 2874.413 | *51.658* |
-| **[roxmltree](https://crates.io/crates/roxmltree)** | 0.721 | 262.573 | 2295.695 | 3730.335 |
-| **[xmltree](https://crates.io/crates/xmltree)** | 3.754 | 2466.145 | 4103.327 | - |
-| **[treexml](https://crates.io/crates/treexml)** | 4.08 | 2304.143 | 4203.388 | 18200.684 |
+| **[dummy_xml](https://crates.io/crates/dummy_xml)** | *0.24* | 138.741 | *194.257* | 142.085 |
+| **[quick_xml](https://crates.io/crates/quick_xml)** | 0.334 | *90.26* | 3135.042 | *51.507* |
+| **[roxmltree](https://crates.io/crates/roxmltree)** | 0.71 | 264.605 | 2252.596 | 3758.354 |
+| **[xmltree](https://crates.io/crates/xmltree)** | 3.819 | 2330.22 | 4273.626 | - |
+| **[treexml](https://crates.io/crates/treexml)** | 4.014 | 2328.218 | 4310.757 | 18102.08 |
 
 Speed units are in microseconds per iteration. Less is better.
 

@@ -7,9 +7,9 @@ Parsing CSVs, and retrieving values at specific rows/columns.
 
 | | baseline | headers | rows |
 | --- | --- | --- | --- |
-| **[quick_csv](https://crates.io/crates/quick_csv)** | *0.406* | - | *96.167* |
-| **[csv](https://crates.io/crates/csv)** | 15.376 | *37.39* | 155.775 |
-| **[simple_csv](https://crates.io/crates/simple_csv)** | 0.409 | 139.742 | 169.986 |
+| **[quick_csv](https://crates.io/crates/quick_csv)** | *0.403* | - | *92.382* |
+| **[csv](https://crates.io/crates/csv)** | 17.078 | *39.463* | 160.045 |
+| **[simple_csv](https://crates.io/crates/simple_csv)** | 0.412 | 130.985 | 170.141 |
 
 Speed units are in microseconds per iteration. Less is better.
 

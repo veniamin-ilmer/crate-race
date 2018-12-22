@@ -8,10 +8,10 @@ Search for the position of a string inside of a string.
 
 | | baseline | monotonous | almost | big_pattern |
 | --- | --- | --- | --- | --- |
-| **[jetscii](https://crates.io/crates/jetscii)** | 0.021 | 9.979 | 38.638 | *2.422* |
-| **[subslice](https://crates.io/crates/subslice)** | 0.032 | *0.568* | 31.214 | 30.351 |
-| **[twoway](https://crates.io/crates/twoway)** | 0.026 | 5.283 | *30.016* | 108.622 |
-| **[galil_seiferas](https://crates.io/crates/galil_seiferas)** | *0.017* | 62.283 | 62.251 | 117.335 |
+| **[jetscii](https://crates.io/crates/jetscii)** | 0.021 | 9.916 | 38.271 | *2.293* |
+| **[subslice](https://crates.io/crates/subslice)** | 0.031 | *0.499* | 31.314 | 28.043 |
+| **[twoway](https://crates.io/crates/twoway)** | 0.024 | 4.896 | *27.313* | 100.385 |
+| **[galil_seiferas](https://crates.io/crates/galil_seiferas)** | *0.017* | 58.423 | 61.593 | 118.727 |
 
 Speed units are in microseconds per iteration. Less is better.
 

@@ -7,9 +7,9 @@ Parsing JSONs, and retrieving values at specific rows/columns.
 
 | | baseline | serial | nested |
 | --- | --- | --- | --- |
-| **[json](https://crates.io/crates/json)** | *0.198* | *7.925* | *12.723* |
-| **[serde_json](https://crates.io/crates/serde_json)** | 0.308 | 24.183 | 28.256 |
-| **[json5](https://crates.io/crates/json5)** | 2.539 | 155.967 | 166.633 |
+| **[json](https://crates.io/crates/json)** | *0.187* | *7.356* | *11.816* |
+| **[serde_json](https://crates.io/crates/serde_json)** | 0.287 | 23.098 | 25.748 |
+| **[json5](https://crates.io/crates/json5)** | 2.243 | 140.213 | 145.682 |
 
 Speed units are in microseconds per iteration. Less is better.
 
