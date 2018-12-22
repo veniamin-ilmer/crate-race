@@ -155,7 +155,7 @@ dependencies = [
 
 [[package]]
 name = "crate-race"
-version = "1.0.0"
+version = "1.1.0"
 dependencies = [
  "afsort 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "bencher 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)",

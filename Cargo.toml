@@ -39,7 +39,7 @@ vek = "0.9.5"
 
 #md5
 md5 = "0.6.1"
-md_5 = { version = "*", package = "md-5" }
+md_5 = { version = "0.8.0", package = "md-5" }
 
 #random
 rand_chacha = "0.1.0"
