@@ -3,6 +3,8 @@
 //!* **Baseline**: Array with length of 1.
 //!* **Thousand**: Array with length of 1,000.
 //!* **Million**: Array with length of 1,000,000.
+//!
+//!The `rand` crate uses the `rand_hc` algorithm.
 
 #[macro_use]
 extern crate bencher;
