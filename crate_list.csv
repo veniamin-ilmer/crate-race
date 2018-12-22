@@ -19,6 +19,11 @@ ndarray,0.12.1,mathvector_dotproduct
 num_bigint,0.2.2,bigint_arithmetic,bigint_parsestr
 numext-fixed-uint,0.1.2,bigint_arithmetic,bigint_parsestr
 nv_xml,0.1.3,xml_parse
+rand_chacha,0.1.0,random_shuffle
+rand_hc,0.1.0,random_shuffle
+rand_isaac,0.1.1,random_shuffle
+rand_pcg,0.1.1,random_shuffle
+rand_xorshift,0.1.0,random_shuffle
 rdxsort,0.3.0,vec_intsort
 roxmltree,0.4.0,xml_parse
 rulinalg,0.4.2,mathvector_dotproduct

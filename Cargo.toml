@@ -42,6 +42,7 @@ md5 = "*"
 md_5 = { version = "*", package = "md-5" }
 
 #random
+rand_chacha = "*"
 rand_isaac = "*"
 rand_xorshift = "*"
 rand_hc = "*"
@@ -55,7 +56,7 @@ subslice = "*"
 twoway = "*"
 
 #vec sort int
-rand = "*"  #Used to shuffle an array for benchmarking later
+rand = "0.6.1"  #Used to shuffle an array for benchmarking later
 afsort = "*"
 cycle-sort = "*"
 dmsort = "*"
@@ -106,6 +107,11 @@ harness = false
 [[bench]]
 name = "md5_hash"
 path = "benches/md5_hash/bench.rs"
+harness = false
+
+[[bench]]
+name = "random_shuffle"
+path = "benches/random_shuffle/bench.rs"
 harness = false
 
 [[bench]]
