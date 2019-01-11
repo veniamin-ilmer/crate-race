@@ -1,3 +1,4 @@
+
 use bencher::Bencher;
 
 use quick_xml::Reader;
@@ -16,16 +17,10 @@ pub fn baseline(b: &mut Bencher) {
 
     loop {
         match reader.read_event(&mut buf) {
-            Ok(Event::Start(ref e)) => {
-                if e.name() == b"tag" {
-                    tagged = true;
-                }
-            }
-            Ok(Event::Text(e)) => {
-                if tagged {
-                    result = e.unescape_and_decode(&reader).unwrap();
-                    break;
-                }
+            Ok(Event::Start(ref e)) if e.name() == b"tag" => tagged = true,
+            Ok(Event::Text(ref e)) if tagged => {
+                result = e.unescape_and_decode(&reader).unwrap();
+                break;
             },
             Ok(Event::Eof) => break, // exits the loop when reaching end of file
             Err(e) => panic!("Error at position {}: {:?}", reader.buffer_position(), e),
@@ -50,12 +45,12 @@ pub fn attribute(b: &mut Bencher) {
 
     loop {
         match reader.read_event(&mut buf) {
-            Ok(Event::Start(ref e)) => {
-                if e.name() == b"tag" {
-                    //This was not fun.. Let me know if there is an easier way to do this.
-                    result = String::from_utf8(e.attributes().nth(999).unwrap().unwrap().value.into_owned()).unwrap();
-                    break;
-                }
+            Ok(Event::Start(ref e)) if e.name() == b"tag" => {
+                result = e.attributes()
+                    .with_checks(false)
+                    .last().unwrap().unwrap()
+                    .unescape_and_decode_value(&reader).unwrap();
+                break;
             }
             Ok(Event::Eof) => break, // exits the loop when reaching end of file
             Err(e) => panic!("Error at position {}: {:?}", reader.buffer_position(), e),
@@ -82,16 +77,10 @@ pub fn serial(b: &mut Bencher) {
 
     loop {
         match reader.read_event(&mut buf) {
-            Ok(Event::Start(ref e)) => {
-                if e.name() == b"tag1000" {
-                    tagged = true;
-                }
-            }
-            Ok(Event::Text(e)) => {
-                if tagged {
-                    result = e.unescape_and_decode(&reader).unwrap();
-                    break;
-                }
+            Ok(Event::Start(ref e)) if e.name() == b"tag1000" => tagged = true,
+            Ok(Event::Text(ref e)) if tagged => {
+                result = e.unescape_and_decode(&reader).unwrap();
+                break;
             },
             Ok(Event::Eof) => break, // exits the loop when reaching end of file
             Err(e) => panic!("Error at position {}: {:?}", reader.buffer_position(), e),
@@ -118,16 +107,10 @@ pub fn nested(b: &mut Bencher) {
 
     loop {
         match reader.read_event(&mut buf) {
-            Ok(Event::Start(ref e)) => {
-                if e.name() == b"tag1000" {
-                    tagged = true;
-                }
-            }
-            Ok(Event::Text(e)) => {
-                if tagged {
-                    result = e.unescape_and_decode(&reader).unwrap();
-                    break;
-                }
+            Ok(Event::Start(ref e)) if e.name() == b"tag1000" => tagged = true,
+            Ok(Event::Text(ref e)) if tagged => {
+                result = e.unescape_and_decode(&reader).unwrap();
+                break;
             },
             Ok(Event::Eof) => break, // exits the loop when reaching end of file
             Err(e) => panic!("Error at position {}: {:?}", reader.buffer_position(), e),
